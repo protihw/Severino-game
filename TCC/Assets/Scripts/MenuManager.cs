@@ -32,15 +32,17 @@ public class NewBehaviourScript : MonoBehaviour
     {
         mainMenu.SetActive(false);
         optionsMenu.SetActive(true);
-        creditsMenu.SetActive(false);
+       creditsMenu.SetActive(false);
     }
 
     public void ChangePanelCredits()
-    {
-        mainMenu.SetActive(false);
-        optionsMenu.SetActive(false);
-        creditsMenu.SetActive(true);
-    }
+     {
+         mainMenu.SetActive(false);
+         optionsMenu.SetActive(false);
+         creditsMenu.SetActive(true);
+     }
+
+
 
     public void ExitGame()
     {
