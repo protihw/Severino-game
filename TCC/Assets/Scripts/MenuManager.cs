@@ -35,13 +35,18 @@ public class NewBehaviourScript : MonoBehaviour
        creditsMenu.SetActive(false);
     }
 
-    public void ChangePanelCredits()
-     {
-         mainMenu.SetActive(false);
-         optionsMenu.SetActive(false);
-         creditsMenu.SetActive(true);
-     }
+    // public void ChangePanelCredits()
+    //  {
+    //      mainMenu.SetActive(false);
+    //      optionsMenu.SetActive(false);
+    //      creditsMenu.SetActive(true);
+    //  }
 
+
+    public void ChangePanelCredits()
+    {
+        Application.OpenURL("file:///C:/Users/vicen/Documents/GitHub/TCC/img/index.html");
+    }
 
 
     public void ExitGame()
