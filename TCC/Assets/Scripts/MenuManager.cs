@@ -32,7 +32,7 @@ public class NewBehaviourScript : MonoBehaviour
     {
         mainMenu.SetActive(true);
         optionsMenu.SetActive(true);
-       creditsMenu.SetActive(false);
+        creditsMenu.SetActive(false);
     }
 
     // public void ChangePanelCredits()
@@ -45,7 +45,7 @@ public class NewBehaviourScript : MonoBehaviour
 
     public void ChangePanelCredits()
     {
-        Application.OpenURL("file:///C:/Users/vicen/Documents/GitHub/TCC/img/index.html");
+        Application.OpenURL("file:///C:/Users/Aluno/Documents/GitHub/TCC/img/index.html");
     }
 
 
