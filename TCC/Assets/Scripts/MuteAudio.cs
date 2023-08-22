@@ -5,14 +5,10 @@ using UnityEngine.UI;
 
 public class MuteAudio : MonoBehaviour
 {
-<<<<<<< Updated upstream
     public AudioSource soundtrack;
     public Toggle toggle;
 
     void Start()
-=======
-    public void MuteHandler(bool mute) 
->>>>>>> Stashed changes
     {
         soundtrack.mute = false;
     }
