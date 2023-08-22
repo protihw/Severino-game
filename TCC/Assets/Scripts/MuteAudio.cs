@@ -5,17 +5,29 @@ using UnityEngine.UI;
 
 public class MuteAudio : MonoBehaviour
 {
+    public AudioSource soundtrack;
+    public Toggle toggle;
 
-    public void MuteHandler(bool mute) 
+    void Start()
     {
-        if(mute)
-        {
-            AudioListener.volume = 0;
-        }
+        soundtrack.mute = false;
+    }
 
-        else
+    public void Mute() 
+    {
+        if (toggle.isOn == true)
         {
-            AudioListener.volume = 1;
+            soundtrack.mute = true;
+            Debug.Log("MUTEI");
+        }
+    }
+
+    public void Unmute()
+    {
+        if (toggle.isOn == false)
+        {
+            soundtrack.mute = false;
+            Debug.Log("DESMUTEI");
         }
     }
 }
