@@ -18,7 +18,6 @@ public class MuteAudio : MonoBehaviour
         if (toggle.isOn == true)
         {
             soundtrack.mute = true;
-            Debug.Log("MUTEI");
         }
     }
 
@@ -27,7 +26,6 @@ public class MuteAudio : MonoBehaviour
         if (toggle.isOn == false)
         {
             soundtrack.mute = false;
-            Debug.Log("DESMUTEI");
         }
     }
 }

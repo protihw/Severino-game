@@ -15,7 +15,6 @@ public class MenuManager : MonoBehaviour
         creditsMenu.SetActive(false);
     }
 
-    // Update is called once per frame
     public void ChangeSceneSampleScene()
     {
         SceneManager.LoadScene(1);
@@ -34,14 +33,6 @@ public class MenuManager : MonoBehaviour
         optionsMenu.SetActive(true);
         creditsMenu.SetActive(false);
     }
-
-    // public void ChangePanelCredits()
-    //  {
-    //      mainMenu.SetActive(false);
-    //      optionsMenu.SetActive(false);
-    //      creditsMenu.SetActive(true);
-    //  }
-
 
     public void ChangePanelCredits()
     {
