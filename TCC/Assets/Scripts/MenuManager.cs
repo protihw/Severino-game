@@ -30,7 +30,7 @@ public class NewBehaviourScript : MonoBehaviour
 
     public void ChangePanelOptions()
     {
-        mainMenu.SetActive(false);
+        mainMenu.SetActive(true);
         optionsMenu.SetActive(true);
        creditsMenu.SetActive(false);
     }
