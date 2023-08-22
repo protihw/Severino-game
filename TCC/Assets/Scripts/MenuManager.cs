@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public class NewBehaviourScript : MonoBehaviour
+public class MenuManager : MonoBehaviour
 {
     public GameObject mainMenu, optionsMenu, creditsMenu;
     // Start is called before the first frame update

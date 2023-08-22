@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class HoverArrowButton : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
+public class HoverArrow : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
     public Image arrowImage; // Arraste a imagem da seta para esse campo no Inspector
 
