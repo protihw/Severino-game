@@ -23,73 +23,15 @@ public class Player : MonoBehaviour
 
         Transform waypoint = waypoints[nextWaypoint];
 
-        if (transform.position.x < waypoint.position.x)
-        {
-            // Botão D
-            if (Input.GetKey(KeyCode.D))
-            {
-                movement.x = 1;
-                isPressed = true;
-                Debug.Log("Botão D pressionado.");
-                if (Input.GetKey(KeyCode.A))
-                {
-                    movement.x = -1;
-                    isPressed = true;
-                    Debug.Log("Botão A pressionado");
-                }
-            }
-        }
+        // Horizontal Movement
+        float horizontalInput = Input.GetAxis("Horizontal");
+        movement.x = horizontalInput;
+        isPressed = Mathf.Abs(horizontalInput) > 0.1f;
 
-        if (transform.position.x > waypoint.position.x)
-        {
-            // Botão A
-            if (Input.GetKey(KeyCode.A))
-            {
-                movement.x = -1;
-                isPressed = true;
-                Debug.Log("Botão A pressionado");
-                if (Input.GetKey(KeyCode.D))
-                {
-                    movement.x = 1;
-                    isPressed = true;
-                    Debug.Log("Botão D pressionado.");
-                }
-            }
-        }
-
-        if (transform.position.y < waypoint.position.y)
-        {
-            // Botão W
-            if (Input.GetKey(KeyCode.W))
-            {
-                movement.y = 1;
-                isPressed = true;
-                Debug.Log("Botão W pressionado.");
-                if (Input.GetKey(KeyCode.S))
-                {
-                    movement.y = -1;
-                    isPressed = true;
-                    Debug.Log("Botão S pressionado.");
-                }
-            }
-        }
-
-        if (transform.position.y > waypoint.position.y)
-        {
-            // Botão S
-            if (Input.GetKey(KeyCode.S))
-            {
-                movement.y = -1;
-                isPressed = true;
-                Debug.Log("Botão S pressionado.");
-                if (Input.GetKey(KeyCode.W))
-                {
-                    movement.y = 1;
-                    isPressed = true;
-                    Debug.Log("Botão W pressionado.");
-                }
-            }
-        }
+        // Vertical Movement
+        float verticalInput = Input.GetAxis("Vertical");
+        movement.y = verticalInput;
+        isPressed |= Mathf.Abs(verticalInput) > 0.1f;
 
         movement.Normalize();
         rb.velocity = movement * moveSpeed;
@@ -97,11 +39,10 @@ public class Player : MonoBehaviour
         if (Vector2.Distance(transform.position, waypoint.position) < 0.1f)
         {
             nextWaypoint++;
-        }
-
-        if (Vector2.Distance(Transform.positionm, waypoint.position) > 0.1f)
-        {
-            nextWaypoint--;
+            if (nextWaypoint >= waypoints.Length)
+            {
+                nextWaypoint = 0;
+            }
         }
 
         animator.SetBool("isPressed", isPressed);
