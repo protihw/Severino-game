@@ -1,8 +1,15 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
 guid: 6ecb1e6781f9e9f4098d25c98ee5aad9
 NativeFormatImporter:
   externalObjects: {}
   mainObjectFileID: 0
+=======
+guid: 31f22b806dab4874a9bc19a4252aaa7e
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 11400000
+>>>>>>> parent of 03310a8 (mano sla)
   userData: 
   assetBundleName: 
   assetBundleVariant: 
