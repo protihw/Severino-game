@@ -6,13 +6,12 @@ using UnityEngine.SceneManagement;
 
 public class MenuManager : MonoBehaviour
 {
-    public GameObject mainMenu, optionsMenu, creditsMenu;
+    public GameObject mainMenu, optionsMenu;
     // Start is called before the first frame update
     void Start()
     {
         mainMenu.SetActive(true);
         optionsMenu.SetActive(false);
-        creditsMenu.SetActive(false);
     }
 
     public void ChangeSceneSampleScene()
@@ -24,14 +23,12 @@ public class MenuManager : MonoBehaviour
     {
         mainMenu.SetActive(true);
         optionsMenu.SetActive(false);
-        creditsMenu.SetActive(false);
     }
 
     public void ChangePanelOptions()
     {
         mainMenu.SetActive(true);
         optionsMenu.SetActive(true);
-        creditsMenu.SetActive(false);
     }
 
     public void ChangePanelCredits()
