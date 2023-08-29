@@ -5,8 +5,13 @@ using UnityEngine.UI;
 
 public class MuteAudio : MonoBehaviour
 {
+    public static MuteAudio instance;
     public AudioSource soundtrack;
     public Toggle toggle;
+
+    void Awake(){
+        instance = this;
+    }
 
     void Start()
     {

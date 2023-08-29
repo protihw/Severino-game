@@ -18,6 +18,11 @@ public class LevelMapManager : MonoBehaviour
         SceneManager.LoadScene(0);
     }
 
+    public void ExitSettings()
+    {
+        panel.SetActive(false);
+    }
+
     public void OpenSettings()
     {
         panel.SetActive(true);
