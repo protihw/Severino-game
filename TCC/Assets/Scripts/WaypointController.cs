@@ -19,10 +19,7 @@ public class WaypointController : MonoBehaviour
     void Update()
     {
         bool isPressed = false;
-        bool isMoving = false;
         Vector2 movement = new Vector2(0, 0);
-
-        Debug.LogError(isMoving);
 
         if (currentWaypoint < waypoints.Length)
         {
@@ -36,7 +33,8 @@ public class WaypointController : MonoBehaviour
                     isPressed = true;
                 }
             }
-            else if (transform.position.x > waypoint.position.x)
+            
+            if (transform.position.x > waypoint.position.x)
             {
                 if (Input.GetKey(KeyCode.A))
                 {
@@ -44,7 +42,7 @@ public class WaypointController : MonoBehaviour
                     isPressed = true;
                 }
             }
-                
+            
             if (transform.position.y < waypoint.position.y)
             {
                 if (Input.GetKey(KeyCode.W))
@@ -53,7 +51,8 @@ public class WaypointController : MonoBehaviour
                     isPressed = true;
                 }
             }
-            else if (transform.position.y > waypoint.position.y)
+            
+            if (transform.position.y > waypoint.position.y)
             {
                 if (Input.GetKey(KeyCode.S))
                 {
@@ -68,10 +67,14 @@ public class WaypointController : MonoBehaviour
             if (Vector2.Distance(transform.position, waypoint.position) < 0.1f)
             {
                 currentWaypoint++;
-                
+                if (currentWaypoint == waypoints.Length)
+                {
+                    rb.velocity = Vector2.zero;
+                    isPressed = false;
+                }
             }
 
             animator.SetBool("isPressed", isPressed);
-        } 
+        }
     }
 }
