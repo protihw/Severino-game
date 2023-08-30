@@ -4,11 +4,17 @@ using UnityEngine;
 
 public class WaypointController : MonoBehaviour
 {
+    public static WaypointController waypointController;
     public float moveSpeed = 5f;
     public Rigidbody2D rb;
     public Animator animator;
     public Transform[] waypoints;
-    private int currentWaypoint = 0;
+    private int currentWaypoint = 0; 
+
+    void Awake()
+    {
+        waypointController = this;
+    }
 
     void Start()
     {
@@ -67,13 +73,41 @@ public class WaypointController : MonoBehaviour
             if (Vector2.Distance(transform.position, waypoint.position) < 0.1f)
             {
                 currentWaypoint++;
+
+                if (currentWaypoint == 1)
+                {
+                    rb.velocity = Vector2.zero;
+                    isPressed = false;
+                    Debug.Log("Cheguei");
+                    LevelMapManager.levelMapManager.OnKey();
+                    if (Input.GetKey(KeyCode.E))
+                    {
+                        LevelMapManager.levelMapManager.ChangeSceneLevel1();
+                    }
+                }
+
+                if (currentWaypoint == 6)
+                {
+                    rb.velocity = Vector2.zero;
+                    isPressed = false;
+                    Debug.Log("Cheguei");
+                    LevelMapManager.levelMapManager.OnKey();
+                }
+
+                if (currentWaypoint == 11)
+                {
+                    rb.velocity = Vector2.zero;
+                    isPressed = false;
+                    Debug.Log("Cheguei");
+                    LevelMapManager.levelMapManager.OnKey();
+                }
+
                 if (currentWaypoint == waypoints.Length)
                 {
                     rb.velocity = Vector2.zero;
                     isPressed = false;
                 }
             }
-
             animator.SetBool("isPressed", isPressed);
         }
     }
