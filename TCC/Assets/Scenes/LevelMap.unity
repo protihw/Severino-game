@@ -790,11 +790,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   panel: {fileID: 977693356}
-<<<<<<< Updated upstream
-  key: {fileID: 0}
-=======
   key: {fileID: 992803248}
->>>>>>> Stashed changes
 --- !u!4 &338148531
 Transform:
   m_ObjectHideFlags: 0
