@@ -1610,6 +1610,7 @@ GameObject:
   - component: {fileID: 599455043}
   - component: {fileID: 599455042}
   - component: {fileID: 599455041}
+  - component: {fileID: 599455044}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1635,7 +1636,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_BackGroundColor: {r: 0.21960786, g: 0.21960786, b: 0.21960786, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -1660,8 +1661,8 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 5.025081
-  m_Depth: -1
+  orthographic size: 5.550024
+  m_Depth: 1
   m_CullingMask:
     serializedVersion: 2
     m_Bits: 4294967295
@@ -1684,13 +1685,19 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 599455040}
   serializedVersion: 2
+<<<<<<< Updated upstream
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -10}
+=======
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -8.07, y: -3.184, z: -10}
+>>>>>>> Stashed changes
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+<<<<<<< Updated upstream
 --- !u!1 &605450494
 GameObject:
   m_ObjectHideFlags: 0
@@ -1729,11 +1736,15 @@ RectTransform:
   m_SizeDelta: {x: 160, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &605450496
+=======
+--- !u!114 &599455044
+>>>>>>> Stashed changes
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< Updated upstream
   m_GameObject: {fileID: 605450494}
   m_Enabled: 1
   m_EditorHideFlags: 0
@@ -1800,6 +1811,36 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   m_IsOn: 0
+=======
+  m_GameObject: {fileID: 599455040}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 72ece51f2901e7445ab60da3685d6b5f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ShowDebugText: 0
+  m_ShowCameraFrustum: 1
+  m_IgnoreTimeScale: 0
+  m_WorldUpOverride: {fileID: 0}
+  m_UpdateMethod: 2
+  m_BlendUpdateMethod: 1
+  m_DefaultBlend:
+    m_Style: 1
+    m_Time: 2
+    m_CustomCurve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+  m_CustomBlends: {fileID: 0}
+  m_CameraCutEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_CameraActivatedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+>>>>>>> Stashed changes
 --- !u!1 &619327335
 GameObject:
   m_ObjectHideFlags: 0
@@ -2566,15 +2607,24 @@ GameObject:
   m_Component:
   - component: {fileID: 986434765}
   - component: {fileID: 986434764}
+<<<<<<< Updated upstream
   - component: {fileID: 986434763}
   - component: {fileID: 986434766}
   m_Layer: 0
   m_Name: greenery_3
   m_TagString: Item
+=======
+  - component: {fileID: 986434766}
+  - component: {fileID: 986434767}
+  m_Layer: 0
+  m_Name: Cactus
+  m_TagString: Obstacle
+>>>>>>> Stashed changes
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+<<<<<<< Updated upstream
 --- !u!61 &986434763
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2620,6 +2670,8 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.87, y: 1.62}
   m_EdgeRadius: 0
+=======
+>>>>>>> Stashed changes
 --- !u!212 &986434764
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2681,7 +2733,7 @@ Transform:
   m_GameObject: {fileID: 986434762}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.85, y: -3.37, z: 0}
+  m_LocalPosition: {x: 0.85, y: -3.347, z: 0}
   m_LocalScale: {x: 1.2558, y: 1.0343, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2696,10 +2748,51 @@ MonoBehaviour:
   m_GameObject: {fileID: 986434762}
   m_Enabled: 1
   m_EditorHideFlags: 0
+<<<<<<< Updated upstream
   m_Script: {fileID: 11500000, guid: ff64d048d05ecf94590e52255aea614c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   playerTag: Player
+=======
+  m_Script: {fileID: 11500000, guid: 327b3c22c12650d4ba4387fab2d1a43f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!70 &986434767
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 986434762}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0.09}
+  m_Size: {x: 0.63, y: 1.44}
+  m_Direction: 0
+>>>>>>> Stashed changes
 --- !u!1 &1043695059
 GameObject:
   m_ObjectHideFlags: 0
@@ -2714,7 +2807,7 @@ GameObject:
   - component: {fileID: 1043695064}
   - component: {fileID: 1043695060}
   m_Layer: 0
-  m_Name: MonedaD_0
+  m_Name: Coin
   m_TagString: Coin
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3155,6 +3248,37 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1884265273}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1135593654
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1135593655}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1135593655
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1135593654}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.0092, y: -0.1616, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1834791214}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1151393648
 GameObject:
@@ -3717,9 +3841,11 @@ GameObject:
   - component: {fileID: 1364475228}
   - component: {fileID: 1364475227}
   - component: {fileID: 1364475226}
+  - component: {fileID: 1364475232}
+  - component: {fileID: 1364475230}
   m_Layer: 0
-  m_Name: Cobra Sprite Sheet_0
-  m_TagString: Untagged
+  m_Name: Snake
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3851,12 +3977,52 @@ Transform:
   m_GameObject: {fileID: 1364475225}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.67, y: -3.13, z: 0}
-  m_LocalScale: {x: 5.172891, y: 5.3251004, z: 1}
+  m_LocalPosition: {x: -1.67, y: -3.04, z: 0}
+  m_LocalScale: {x: 6, y: 6, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1364475230
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1364475225}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4eb0bf2fb85b95c43ada94940a70a28e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveSpeed: 1.5
+--- !u!50 &1364475232
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1364475225}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 4
 --- !u!1 &1406426832
 GameObject:
   m_ObjectHideFlags: 0
@@ -4939,7 +5105,8 @@ GameObject:
   - component: {fileID: 1816991500}
   - component: {fileID: 1816991502}
   - component: {fileID: 1816991501}
-  m_Layer: 0
+  - component: {fileID: 1816991503}
+  m_Layer: 6
   m_Name: Tilemap
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5326,6 +5493,51 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!61 &1816991503
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1816991499}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 1.5, y: -4.496817}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 25, y: 1.006366}
+  m_EdgeRadius: 0
 --- !u!1 &1834791209
 GameObject:
   m_ObjectHideFlags: 0
@@ -5340,9 +5552,11 @@ GameObject:
   - component: {fileID: 1834791215}
   - component: {fileID: 1834791216}
   - component: {fileID: 1834791211}
+  - component: {fileID: 1834791215}
+  - component: {fileID: 1834791216}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5362,7 +5576,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 0
+  m_GravityScale: 1
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -5373,7 +5587,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!95 &1834791212
 Animator:
   serializedVersion: 5
@@ -5456,25 +5670,71 @@ Transform:
   m_GameObject: {fileID: 1834791209}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -8.07, y: -3.15, z: 0}
+  m_LocalPosition: {x: -8.07, y: -3.194, z: 0}
   m_LocalScale: {x: 5, y: 5, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 1135593655}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+<<<<<<< Updated upstream
 --- !u!114 &1834791215
 MonoBehaviour:
+=======
+--- !u!61 &1834791215
+BoxCollider2D:
+>>>>>>> Stashed changes
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1834791209}
   m_Enabled: 1
+<<<<<<< Updated upstream
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7d945d3db66888948bff4d7c65d4aeac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   scoreTxt: {fileID: 0}
+=======
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.0103569925, y: -0.049750082}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.64, y: 0.32}
+    newSize: {x: 0.32, y: 0.32}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.1653223, y: 0.22415279}
+  m_EdgeRadius: 0
+>>>>>>> Stashed changes
 --- !u!114 &1834791216
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5484,6 +5744,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1834791209}
   m_Enabled: 1
   m_EditorHideFlags: 0
+<<<<<<< Updated upstream
   m_Script: {fileID: 11500000, guid: 2b0ed9f2fe672f2499617207b087279a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
@@ -5565,6 +5826,17 @@ RectTransform:
   m_AnchoredPosition: {x: -511.3, y: 157.34}
   m_SizeDelta: {x: -1004.5903, y: -403.28}
   m_Pivot: {x: 0.5, y: 0.5}
+=======
+  m_Script: {fileID: 11500000, guid: b5f4a0aa4e2eb1b4390ead285d9a516e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveSpeed: 3
+  jumpForce: 7
+  groundCheck: {fileID: 1135593655}
+  groundLayer:
+    serializedVersion: 2
+    m_Bits: 64
+>>>>>>> Stashed changes
 --- !u!1 &1864272598
 GameObject:
   m_ObjectHideFlags: 0
@@ -6494,10 +6766,13 @@ SceneRoots:
   m_Roots:
   - {fileID: 599455043}
   - {fileID: 1834791214}
-  - {fileID: 1791956592}
-  - {fileID: 1912467852}
   - {fileID: 1364475229}
   - {fileID: 986434765}
   - {fileID: 1043695063}
+<<<<<<< Updated upstream
   - {fileID: 549118222}
   - {fileID: 1347097452}
+=======
+  - {fileID: 1791956592}
+  - {fileID: 1912467852}
+>>>>>>> Stashed changes

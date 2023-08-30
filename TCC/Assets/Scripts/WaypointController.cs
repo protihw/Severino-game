@@ -5,11 +5,13 @@ using UnityEngine;
 public class WaypointController : MonoBehaviour
 {
     public static WaypointController waypointController;
+    public bool isPressed = false;
+    public bool isOnLevel = false;
     public float moveSpeed = 5f;
     public Rigidbody2D rb;
     public Animator animator;
     public Transform[] waypoints;
-    private int currentWaypoint = 0; 
+    private int currentWaypoint = 0;
 
     void Awake()
     {
@@ -24,13 +26,13 @@ public class WaypointController : MonoBehaviour
 
     void Update()
     {
-        bool isPressed = false;
+        isPressed = false;
         Vector2 movement = new Vector2(0, 0);
 
         if (currentWaypoint < waypoints.Length)
         {
             Transform waypoint = waypoints[currentWaypoint];
-                
+                        
             if (transform.position.x < waypoint.position.x)
             {
                 if (Input.GetKey(KeyCode.D))
@@ -66,40 +68,39 @@ public class WaypointController : MonoBehaviour
                     isPressed = true;
                 }
             }
-                
+
+            if (isOnLevel == true)
+            {
+                if (Input.GetKey(KeyCode.E))
+                {
+                    LevelMapManager.levelMapManager.ChangeSceneLevel(currentWaypoint);
+                }
+            }
+
             movement.Normalize();
             rb.velocity = movement * moveSpeed;
+            
+            float distanceToWaypoint = Vector2.Distance(transform.position, waypoint.position);
 
-            if (Vector2.Distance(transform.position, waypoint.position) < 0.1f)
+            if (distanceToWaypoint < 0.1f)
             {
                 currentWaypoint++;
 
-                if (currentWaypoint == 1)
+                if (currentWaypoint == 1 || currentWaypoint == 6 || currentWaypoint == 11)
                 {
-                    rb.velocity = Vector2.zero;
-                    isPressed = false;
-                    Debug.Log("Cheguei");
-                    LevelMapManager.levelMapManager.OnKey();
-                    if (Input.GetKey(KeyCode.E))
+                    if (!isOnLevel)
                     {
-                        LevelMapManager.levelMapManager.ChangeSceneLevel1();
+                        LevelMapManager.levelMapManager.OnKey();
+                        isOnLevel = true;
                     }
                 }
-
-                if (currentWaypoint == 6)
+                else
                 {
-                    rb.velocity = Vector2.zero;
-                    isPressed = false;
-                    Debug.Log("Cheguei");
-                    LevelMapManager.levelMapManager.OnKey();
-                }
-
-                if (currentWaypoint == 11)
-                {
-                    rb.velocity = Vector2.zero;
-                    isPressed = false;
-                    Debug.Log("Cheguei");
-                    LevelMapManager.levelMapManager.OnKey();
+                    if (isOnLevel)
+                    {
+                        LevelMapManager.levelMapManager.OutKey();
+                        isOnLevel = false;
+                    }
                 }
 
                 if (currentWaypoint == waypoints.Length)
@@ -108,6 +109,7 @@ public class WaypointController : MonoBehaviour
                     isPressed = false;
                 }
             }
+
             animator.SetBool("isPressed", isPressed);
         }
     }

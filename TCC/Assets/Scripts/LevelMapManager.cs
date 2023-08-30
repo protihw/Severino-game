@@ -26,9 +26,20 @@ public class LevelMapManager : MonoBehaviour
         SceneManager.LoadScene(0);
     }
 
-    public void ChangeSceneLevel1()
+    public void ChangeSceneLevel(int currentWaypoint)
     {
-        SceneManager.LoadScene(2);
+        if (currentWaypoint == 1)
+        {
+            SceneManager.LoadScene(2);
+        }
+        else if (currentWaypoint == 6)
+        {
+            SceneManager.LoadScene(3);
+        }
+        else if (currentWaypoint == 11)
+        {
+            SceneManager.LoadScene(4);
+        }
     }
 
     public void OnKey()

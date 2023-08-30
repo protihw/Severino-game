@@ -5,7 +5,12 @@ TagManager:
   serializedVersion: 2
   tags:
   - Coin
+<<<<<<< Updated upstream
   - Item
+=======
+  - Enemy
+  - Obstacle
+>>>>>>> Stashed changes
   layers:
   - Default
   - TransparentFX
@@ -13,7 +18,7 @@ TagManager:
   - 
   - Water
   - UI
-  - 
+  - Ground
   - 
   - 
   - 
