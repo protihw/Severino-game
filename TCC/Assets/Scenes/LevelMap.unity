@@ -435,18 +435,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 3
   rb: {fileID: 0}
-  animator: {fileID: 0}
+  animator: {fileID: 169326541}
   waypoints:
   - {fileID: 1096545851}
   - {fileID: 697811827}
   - {fileID: 1367939391}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
 --- !u!50 &169326545
 Rigidbody2D:
   serializedVersion: 4
