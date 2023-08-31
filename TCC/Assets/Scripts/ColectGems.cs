@@ -2,10 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-
+using TMPro;
 public class CollectGems : MonoBehaviour
 {
-    public Text scoreTxt;
+    public TMP_Text scoreTxt;
     private int score;
 
     private void Start()
