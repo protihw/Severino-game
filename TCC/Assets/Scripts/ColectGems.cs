@@ -20,9 +20,9 @@ public class CollectGems : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D col)
     {
-        if (col.CompareTag("coin"))
+        if (col.CompareTag("Coin"))
         {
-            score = score + 1;
+            score++;
             Destroy(col.gameObject);
         }
     }
