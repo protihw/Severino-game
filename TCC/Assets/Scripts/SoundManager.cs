@@ -9,7 +9,7 @@ public class SoundManager : MonoBehaviour
 
     void Start()
     {
-        if (!PlayerPrefs.HasKey("musicVolume")) // Correção: "HasKey" em vez de "Haskey"
+        if (!PlayerPrefs.HasKey("musicVolume"))
         {
             PlayerPrefs.SetFloat("musicVolume", 1);
             Load();
@@ -22,7 +22,7 @@ public class SoundManager : MonoBehaviour
 
     public void ChangeVolume()
     {
-        AudioListener.volume = volumeSlider.value; // Correção: "volume" em vez de "Volume", e "value" em vez de "Value"
+        AudioListener.volume = volumeSlider.value;
         Save();
     }
 
