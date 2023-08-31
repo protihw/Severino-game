@@ -8,6 +8,11 @@ public class ScoreManager : MonoBehaviour
     public static ScoreManager scoreManager;
     public TMP_Text scoreText;
 
+    void Start()
+    {
+        UpdateScore(PlayerController.player.score);
+    }
+    
     private void Awake()
     {
         scoreManager = this;

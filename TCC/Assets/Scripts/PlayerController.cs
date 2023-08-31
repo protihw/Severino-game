@@ -4,6 +4,7 @@ public class PlayerController : MonoBehaviour
 {
     public static PlayerController player;
     public int score;
+    public int heart;
     public float moveSpeed = 5f;
     public float jumpForce = 10f;
     public Transform groundCheck;
@@ -17,6 +18,7 @@ public class PlayerController : MonoBehaviour
     {
         player = this;
         score = 0;
+        heart = 3;
     }
 
     void Start()
@@ -73,6 +75,8 @@ public class PlayerController : MonoBehaviour
             else
             {
                 Debug.Log("Player collided with enemy!");
+                heart--;
+                HeartManager.heartManager.UpdateHeart(heart);
                 PlayerController.player.transform.position = new Vector3(-8.07f, PlayerController.player.transform.position.y, PlayerController.player.transform.position.z);
             }
         }
@@ -88,6 +92,8 @@ public class PlayerController : MonoBehaviour
         if (collision.gameObject.CompareTag("Obstacle"))
         {
             Debug.Log("Player collided with obstacle!");
+            heart--;
+            HeartManager.heartManager.UpdateHeart(heart);
             PlayerController.player.transform.position = new Vector3(-8.07f, PlayerController.player.transform.position.y, PlayerController.player.transform.position.z);
         }
     }

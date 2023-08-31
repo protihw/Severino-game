@@ -54,7 +54,7 @@ public class EnemySnake : MonoBehaviour
 
     private IEnumerator DestroyAfterDelay()
     {
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(1.25f);
         Destroy(gameObject);
     }
 }
