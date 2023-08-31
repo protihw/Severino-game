@@ -3,6 +3,7 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     public static PlayerController player;
+    public int score;
     public float moveSpeed = 5f;
     public float jumpForce = 10f;
     public Transform groundCheck;
@@ -15,6 +16,7 @@ public class PlayerController : MonoBehaviour
     void Awake()
     {
         player = this;
+        score = 0;
     }
 
     void Start()
@@ -74,6 +76,15 @@ public class PlayerController : MonoBehaviour
                 PlayerController.player.transform.position = new Vector3(-8.07f, PlayerController.player.transform.position.y, PlayerController.player.transform.position.z);
             }
         }
+
+        if (collision.gameObject.CompareTag("Coin"))
+        {
+            Debug.Log("Player collided with coin!");
+            score++;
+            Coin.coin.EliminateEnemy();
+            ScoreManager.scoreManager.UpdateScore(score);
+        }
+        
         if (collision.gameObject.CompareTag("Obstacle"))
         {
             Debug.Log("Player collided with obstacle!");
