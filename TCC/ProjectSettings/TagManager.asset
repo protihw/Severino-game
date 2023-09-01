@@ -8,6 +8,7 @@ TagManager:
   - Obstacle
   - EnemySnake
   - EnemyDucky
+  - Checkpoint
   layers:
   - Default
   - TransparentFX

@@ -17,12 +17,13 @@ public class PlayerController : MonoBehaviour
     void Awake()
     {
         player = this;
-        score = 0;
-        heart = PlayerPrefs.GetInt("Vida");
+        heart = PlayerPrefs.GetInt("Lives");
+        score = PlayerPrefs.GetInt("Score");
     }
 
     void Start()
     {
+        PlayerPrefs.SetInt("Lives", 3);
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
     }
@@ -73,7 +74,7 @@ public class PlayerController : MonoBehaviour
             {
                 Debug.Log("Player collided with enemy snake!");
                 heart--;
-                PlayerPrefs.SetInt("Vida", heart);
+                PlayerPrefs.SetInt("Lives", heart);
                 HeartManager.heartManager.UpdateHeart(heart);
                 
             }
@@ -82,20 +83,20 @@ public class PlayerController : MonoBehaviour
         if (collision.gameObject.CompareTag("EnemyDucky"))
         {
             float playerY = transform.position.y;
-            float enemyY = EnemyDucky.enemyDucky.transform.position.y;
+            float enemyY = collision.gameObject.transform.position.y;
 
             Debug.Log(playerY);
             Debug.Log(enemyY);
 
             if (playerY > enemyY)
             {
-                EnemyDucky.enemyDucky.EliminateEnemy();
+                collision.gameObject.GetComponent<EnemyDucky>().EliminateEnemy();
             }
             else
             {
                 Debug.Log("Player collided with enemy ducky!");
                 heart--;
-                PlayerPrefs.SetInt("Vida", heart);
+                PlayerPrefs.SetInt("Lives", heart);
                 HeartManager.heartManager.UpdateHeart(heart);
             }
         }
@@ -115,6 +116,12 @@ public class PlayerController : MonoBehaviour
             heart--;
             HeartManager.heartManager.UpdateHeart(heart);
             PlayerController.player.transform.position = new Vector3(-8.07f, PlayerController.player.transform.position.y, PlayerController.player.transform.position.z);
+        }
+
+        if (collision.gameObject.CompareTag("Checkpoint"))
+        {
+            Debug.Log("Player collided with checkpoint!");
+            LevelManager.levelManager.ChangeNextScene();
         }
     }
 }

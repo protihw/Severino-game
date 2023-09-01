@@ -36,12 +36,10 @@ public class EnemySnake : MonoBehaviour
 
     public void EliminateEnemy()
     {
-            Debug.Log("Player killed enemy!");
-            animator.SetBool("isDie", true);
-            isDying = true;
-            GetComponent<BoxCollider2D>().enabled = false;
-            Destroy(gameObject, 0.5f);
-    }
-
-   
+        Debug.Log("Player killed enemy!");
+        animator.SetBool("isDie", true);
+        isDying = true;
+        GetComponent<BoxCollider2D>().enabled = false;
+        Destroy(gameObject, 0.5f);
+    }   
 }

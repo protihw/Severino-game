@@ -10,7 +10,7 @@ public class LevelManager : MonoBehaviour
     public GameObject panel;
     public CanvasGroup panelCanvasGroup;
     public bool isOpen = false;
-
+    public SceneManager currentScene;
     void Awake()
     {
         levelManager = this;
@@ -50,6 +50,11 @@ public class LevelManager : MonoBehaviour
     {
         SceneManager.LoadScene(0);
         Debug.Log("Cheguei");
+    }
+
+    public void ChangeNextScene()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex+1);
     }
 
     public void OpenSettings()
