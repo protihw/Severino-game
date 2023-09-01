@@ -3,18 +3,12 @@ using UnityEngine;
 
 public class EnemySnake : MonoBehaviour
 {
-    public static EnemySnake enemySnake;
     public float moveSpeed = 3f;
     private Transform player;
     private Rigidbody2D rb;
     public Animator animator;
     
     private bool isDying = false;
-
-    void Awake()
-    {
-        enemySnake = this;
-    }
 
     void Start()
     {
@@ -42,19 +36,12 @@ public class EnemySnake : MonoBehaviour
 
     public void EliminateEnemy()
     {
-        if (!isDying)
-        {
             Debug.Log("Player killed enemy!");
             animator.SetBool("isDie", true);
             isDying = true;
-
-            StartCoroutine(DestroyAfterDelay());
-        }
+            GetComponent<BoxCollider2D>().enabled = false;
+            Destroy(gameObject, 0.5f);
     }
 
-    private IEnumerator DestroyAfterDelay()
-    {
-        yield return new WaitForSeconds(1.25f);
-        Destroy(gameObject);
-    }
+   
 }

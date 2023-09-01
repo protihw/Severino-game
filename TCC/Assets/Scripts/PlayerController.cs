@@ -18,7 +18,7 @@ public class PlayerController : MonoBehaviour
     {
         player = this;
         score = 0;
-        heart = 3;
+        heart = PlayerPrefs.GetInt("Vida");
     }
 
     void Start()
@@ -63,18 +63,19 @@ public class PlayerController : MonoBehaviour
         if (collision.gameObject.CompareTag("EnemySnake"))
         {
             float playerY = transform.position.y;
-            float enemyY = EnemySnake.enemySnake.transform.position.y;
+            float enemyY = collision.gameObject.transform.position.y;
 
             if (playerY > enemyY)
             {
-                EnemySnake.enemySnake.EliminateEnemy();
+                collision.gameObject.GetComponent<EnemySnake>().EliminateEnemy();
             }
             else
             {
                 Debug.Log("Player collided with enemy snake!");
                 heart--;
+                PlayerPrefs.SetInt("Vida", heart);
                 HeartManager.heartManager.UpdateHeart(heart);
-                PlayerController.player.transform.position = new Vector3(-8.07f, PlayerController.player.transform.position.y, PlayerController.player.transform.position.z);
+                
             }
         }
 
@@ -94,8 +95,8 @@ public class PlayerController : MonoBehaviour
             {
                 Debug.Log("Player collided with enemy ducky!");
                 heart--;
+                PlayerPrefs.SetInt("Vida", heart);
                 HeartManager.heartManager.UpdateHeart(heart);
-                PlayerController.player.transform.position = new Vector3(-8.07f, PlayerController.player.transform.position.y, PlayerController.player.transform.position.z);
             }
         }
 
@@ -103,7 +104,8 @@ public class PlayerController : MonoBehaviour
         {
             Debug.Log("Player collided with coin!");
             score++;
-            Coin.coin.EliminateEnemy();
+            collision.gameObject.GetComponent<BoxCollider2D>().enabled = false;
+            Destroy(collision.gameObject,0.2f);
             ScoreManager.scoreManager.UpdateScore(score);
         }
         
