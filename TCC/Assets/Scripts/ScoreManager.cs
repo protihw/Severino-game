@@ -10,7 +10,7 @@ public class ScoreManager : MonoBehaviour
 
     void Start()
     {
-       // UpdateScore(PlayerController.player.score);
+        UpdateScore(PlayerController.player.score);
     }
     
     private void Awake()

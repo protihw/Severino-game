@@ -54,7 +54,7 @@ public class LevelManager : MonoBehaviour
 
     public void ChangeNextScene()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex+1);
+        SceneManager.LoadScene(1);
     }
 
     public void OpenSettings()

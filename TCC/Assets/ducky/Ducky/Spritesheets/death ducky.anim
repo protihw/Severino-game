@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: severino tomando dano
+  m_Name: death ducky
   serializedVersion: 7
   m_Legacy: 0
   m_Compressed: 0
@@ -21,11 +21,13 @@ AnimationClip:
   - serializedVersion: 2
     curve:
     - time: 0
-      value: {fileID: 21300000, guid: 716d5d7c31adb42499bd7fb36b65a91e, type: 2}
+      value: {fileID: -1277331771, guid: 5f1d816d121b03046a0dd984ac65c49c, type: 3}
     - time: 0.083333336
-      value: {fileID: 21300000, guid: 60f729ff6dfa75443b9917134b56ad47, type: 2}
+      value: {fileID: -858026020, guid: 5f1d816d121b03046a0dd984ac65c49c, type: 3}
     - time: 0.16666667
-      value: {fileID: 21300000, guid: 080863be47173e242a7c9c68eb2dd56f, type: 2}
+      value: {fileID: 63867384, guid: 5f1d816d121b03046a0dd984ac65c49c, type: 3}
+    - time: 0.25
+      value: {fileID: -1184495197, guid: 5f1d816d121b03046a0dd984ac65c49c, type: 3}
     attribute: m_Sprite
     path: 
     classID: 212
@@ -48,15 +50,16 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     pptrCurveMapping:
-    - {fileID: 21300000, guid: 716d5d7c31adb42499bd7fb36b65a91e, type: 2}
-    - {fileID: 21300000, guid: 60f729ff6dfa75443b9917134b56ad47, type: 2}
-    - {fileID: 21300000, guid: 080863be47173e242a7c9c68eb2dd56f, type: 2}
+    - {fileID: -1277331771, guid: 5f1d816d121b03046a0dd984ac65c49c, type: 3}
+    - {fileID: -858026020, guid: 5f1d816d121b03046a0dd984ac65c49c, type: 3}
+    - {fileID: 63867384, guid: 5f1d816d121b03046a0dd984ac65c49c, type: 3}
+    - {fileID: -1184495197, guid: 5f1d816d121b03046a0dd984ac65c49c, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 0.25
+    m_StopTime: 0.33333334
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0

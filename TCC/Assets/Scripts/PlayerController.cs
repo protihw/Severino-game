@@ -76,7 +76,7 @@ public class PlayerController : MonoBehaviour
                 heart--;
                 PlayerPrefs.SetInt("Lives", heart);
                 HeartManager.heartManager.UpdateHeart(heart);
-                
+                animator.SetBool("isHit", true);
             }
         }
 
@@ -98,6 +98,7 @@ public class PlayerController : MonoBehaviour
                 heart--;
                 PlayerPrefs.SetInt("Lives", heart);
                 HeartManager.heartManager.UpdateHeart(heart);
+                animator.SetBool("isHit", true);
             }
         }
 
@@ -115,7 +116,7 @@ public class PlayerController : MonoBehaviour
             Debug.Log("Player collided with obstacle!");
             heart--;
             HeartManager.heartManager.UpdateHeart(heart);
-            PlayerController.player.transform.position = new Vector3(-8.07f, PlayerController.player.transform.position.y, PlayerController.player.transform.position.z);
+            animator.SetBool("isHit", true);
         }
 
         if (collision.gameObject.CompareTag("Checkpoint"))
