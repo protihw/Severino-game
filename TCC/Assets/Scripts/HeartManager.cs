@@ -10,7 +10,7 @@ public class HeartManager : MonoBehaviour
 
     void Start()
     {
-        UpdateHeart(PlayerController.player.heart);
+            UpdateHeart(PlayerController.player.heart);
     }
 
     private void Awake()
