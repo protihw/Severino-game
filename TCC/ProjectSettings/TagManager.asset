@@ -5,8 +5,9 @@ TagManager:
   serializedVersion: 2
   tags:
   - Coin
-  - Enemy
   - Obstacle
+  - EnemySnake
+  - EnemyDucky
   layers:
   - Default
   - TransparentFX

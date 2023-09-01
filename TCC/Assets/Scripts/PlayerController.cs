@@ -60,18 +60,39 @@ public class PlayerController : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Enemy"))
+        if (collision.gameObject.CompareTag("EnemySnake"))
         {
             float playerY = transform.position.y;
-            float enemyY = EnemySnake.enemy.transform.position.y;
+            float enemyY = EnemySnake.enemySnake.transform.position.y;
 
             if (playerY > enemyY)
             {
-                EnemySnake.enemy.EliminateEnemy();
+                EnemySnake.enemySnake.EliminateEnemy();
             }
             else
             {
-                Debug.Log("Player collided with enemy!");
+                Debug.Log("Player collided with enemy snake!");
+                heart--;
+                HeartManager.heartManager.UpdateHeart(heart);
+                PlayerController.player.transform.position = new Vector3(-8.07f, PlayerController.player.transform.position.y, PlayerController.player.transform.position.z);
+            }
+        }
+
+        if (collision.gameObject.CompareTag("EnemyDucky"))
+        {
+            float playerY = transform.position.y;
+            float enemyY = EnemyDucky.enemyDucky.transform.position.y;
+
+            Debug.Log(playerY);
+            Debug.Log(enemyY);
+
+            if (playerY > enemyY)
+            {
+                EnemyDucky.enemyDucky.EliminateEnemy();
+            }
+            else
+            {
+                Debug.Log("Player collided with enemy ducky!");
                 heart--;
                 HeartManager.heartManager.UpdateHeart(heart);
                 PlayerController.player.transform.position = new Vector3(-8.07f, PlayerController.player.transform.position.y, PlayerController.player.transform.position.z);

@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class EnemyDucky : MonoBehaviour
 {
-    public static EnemyDucky enemy;
+    public static EnemyDucky enemyDucky;
     public float moveSpeed = 3f;
     private Transform player;
     private Rigidbody2D rb;
@@ -13,7 +13,7 @@ public class EnemyDucky : MonoBehaviour
 
     void Awake()
     {
-        enemy = this;
+        enemyDucky = this;
     }
 
     void Start()

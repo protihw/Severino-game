@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class EnemySnake : MonoBehaviour
 {
-    public static EnemySnake enemy;
+    public static EnemySnake enemySnake;
     public float moveSpeed = 3f;
     private Transform player;
     private Rigidbody2D rb;
@@ -13,7 +13,7 @@ public class EnemySnake : MonoBehaviour
 
     void Awake()
     {
-        enemy = this;
+        enemySnake = this;
     }
 
     void Start()
