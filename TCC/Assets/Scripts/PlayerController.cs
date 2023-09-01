@@ -5,6 +5,8 @@ public class PlayerController : MonoBehaviour
     public static PlayerController player;
     public int score;
     public int heart;
+    public int level;
+    public bool died;
     public float moveSpeed = 5f;
     public float jumpForce = 10f;
     public Transform groundCheck;
@@ -19,17 +21,20 @@ public class PlayerController : MonoBehaviour
         player = this;
         heart = PlayerPrefs.GetInt("Lives");
         score = PlayerPrefs.GetInt("Score");
+        level = PlayerPrefs.GetInt("Levels");
     }
 
     void Start()
     {
         PlayerPrefs.SetInt("Lives", 3);
+        PlayerPrefs.SetInt("Levels", 2);
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
     }
 
     void Update()
     {
+        Debug.Log(PlayerPrefs.GetInt("Levels"));
         isGrounded = Physics2D.OverlapCircle(groundCheck.position, 0.1f, groundLayer);
 
         float horizontalInput = Input.GetAxis("Horizontal");
@@ -122,6 +127,14 @@ public class PlayerController : MonoBehaviour
         if (collision.gameObject.CompareTag("Checkpoint"))
         {
             Debug.Log("Player collided with checkpoint!");
+            if (PlayerPrefs.GetInt("Levels") > 2)
+            {
+                level++;
+            }
+            else
+            {
+                PlayerPrefs.SetInt("Levels", 4);
+            }
             LevelManager.levelManager.ChangeNextScene();
         }
     }

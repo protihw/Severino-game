@@ -21,17 +21,34 @@ public class EnemySnake : MonoBehaviour
     {
         if (!isDying)
         {
-            Vector2 direction = new Vector2(player.position.x - transform.position.x, 0).normalized;
-            rb.velocity = direction * moveSpeed;
+            float distanceToPlayer = Vector2.Distance(transform.position, player.position);
 
-            float angle = Mathf.Atan2(0, direction.x) * Mathf.Rad2Deg;
-            transform.rotation = Quaternion.Euler(0, angle, 0);
+            if (distanceToPlayer <= 5)
+            {
+                Vector2 direction = new Vector2(player.position.x - transform.position.x, 0).normalized;
+                rb.velocity = direction * moveSpeed;
+
+                float angle = Mathf.Atan2(0, direction.x) * Mathf.Rad2Deg;
+                transform.rotation = Quaternion.Euler(0, angle, 0);
+            }
+            else
+            {
+                rb.velocity = Vector2.zero;
+            }
         }
         else
         {
             rb.velocity = Vector2.zero;
         }
-        
+    }
+    
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Coin"))
+        {
+            // Ignorar colisão com objetos que têm a tag "coin".
+            Physics2D.IgnoreCollision(GetComponent<Collider2D>(), collision.collider);
+        }
     }
 
     public void EliminateEnemy()
