@@ -65,9 +65,6 @@ public class PlayerController : MonoBehaviour
             float playerY = transform.position.y;
             float enemyY = EnemySnake.enemy.transform.position.y;
 
-            Debug.Log("playerY" + playerY);
-            Debug.Log("enemyY" + enemyY);
-
             if (playerY > enemyY)
             {
                 EnemySnake.enemy.EliminateEnemy();
