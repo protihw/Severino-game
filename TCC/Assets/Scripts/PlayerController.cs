@@ -67,6 +67,7 @@ public class PlayerController : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D collision)
     {
+        // colisão com a cobra
         if (collision.gameObject.CompareTag("EnemySnake"))
         {
             float playerY = transform.position.y;
@@ -79,16 +80,24 @@ public class PlayerController : MonoBehaviour
             else
             {
                 Debug.Log("Player collided with enemy snake!");
-                heart--;
+
+                if (Physics2D.GetIgnoreCollision(GetComponent<Collider2D>(), collision.collider) == false)
+                {
+                    heart--;
+                }
+
+                animator.SetBool("isHit", true);
+                Physics2D.IgnoreCollision(GetComponent<Collider2D>(), collision.collider);
+
                 PlayerPrefs.SetInt("Lives", heart);
                 HeartManager.heartManager.UpdateHeart(heart);
 
-                animator.SetBool("isHit", true);
-
                 StartCoroutine(ReturnToNormalState());
+                StartCoroutine(ReturnToVunelrable(collision));
             }
         }
 
+        // colisão com o pato
         if (collision.gameObject.CompareTag("EnemyDucky"))
         {
             float playerY = transform.position.y;
@@ -104,13 +113,20 @@ public class PlayerController : MonoBehaviour
             else
             {
                 Debug.Log("Player collided with enemy ducky!");
-                heart--;
+
+                if (Physics2D.GetIgnoreCollision(GetComponent<Collider2D>(), collision.collider) == false)
+                {
+                    heart--;
+                }
+
+                animator.SetBool("isHit", true);
+                Physics2D.IgnoreCollision(GetComponent<Collider2D>(), collision.collider);
+
                 PlayerPrefs.SetInt("Lives", heart);
                 HeartManager.heartManager.UpdateHeart(heart);
 
-                animator.SetBool("isHit", true);
-
                 StartCoroutine(ReturnToNormalState());
+                StartCoroutine(ReturnToVunelrable(collision));
             }
         }
 
@@ -118,20 +134,29 @@ public class PlayerController : MonoBehaviour
         {
             Debug.Log("Player collided with coin!");
             score++;
-            collision.gameObject.GetComponent<BoxCollider2D>().enabled = false;
+            collision.gameObject.GetComponent<CircleCollider2D>().enabled = false;
             Destroy(collision.gameObject,0.2f);
             ScoreManager.scoreManager.UpdateScore(score);
         }
-        
+
+        // colisão com obstaculos
         if (collision.gameObject.CompareTag("Obstacle"))
         {
             Debug.Log("Player collided with obstacle!");
-            heart--;
-            HeartManager.heartManager.UpdateHeart(heart);
+
+            if (Physics2D.GetIgnoreCollision(GetComponent<Collider2D>(), collision.collider) == false)
+            {
+                heart--;
+            }
 
             animator.SetBool("isHit", true);
+            Physics2D.IgnoreCollision(GetComponent<Collider2D>(), collision.collider);
 
-            StartCoroutine(ReturnToNormalState());                                                                                                                                                                
+            PlayerPrefs.SetInt("Lives", heart);
+            HeartManager.heartManager.UpdateHeart(heart);
+
+            StartCoroutine(ReturnToNormalState());
+            StartCoroutine(ReturnToVunelrable(collision));
         }
 
         if (collision.gameObject.CompareTag("Checkpoint"))
@@ -154,5 +179,12 @@ public class PlayerController : MonoBehaviour
         yield return new WaitForSeconds(2.0f);
 
         animator.SetBool("isHit", false);
+    }
+
+    private IEnumerator ReturnToVunelrable(Collision2D collision)
+    {
+        yield return new WaitForSeconds(2.0f);
+
+        Physics2D.IgnoreCollision(GetComponent<Collider2D>(), collision.collider, false);
     }
 }

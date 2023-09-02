@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7891129591113773548}
   - component: {fileID: 3382816945939113868}
   - component: {fileID: 1748269521719393451}
-  - component: {fileID: 4180713280970294111}
+  - component: {fileID: 779836355467886130}
   - component: {fileID: 2590523162871828326}
   - component: {fileID: 8392671892272567221}
   m_Layer: 7
@@ -109,8 +109,8 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!61 &4180713280970294111
-BoxCollider2D:
+--- !u!60 &779836355467886130
+PolygonCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -141,7 +141,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.037287913, y: -0.090555295}
+  m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -151,9 +151,36 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 0.17084827, y: 0.1388894}
-  m_EdgeRadius: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0.00866867, y: -0.0146451}
+      - {x: -0.03800285, y: -0.015310843}
+      - {x: -0.072041124, y: -0.04732255}
+      - {x: -0.0737563, y: -0.0798148}
+      - {x: -0.035233907, y: -0.11628338}
+      - {x: -0.07818168, y: -0.11608145}
+      - {x: -0.085103445, y: -0.11600491}
+      - {x: -0.08508738, y: -0.12641451}
+      - {x: -0.11270695, y: -0.12597658}
+      - {x: -0.112568304, y: -0.13609669}
+      - {x: -0.122993715, y: -0.13635871}
+      - {x: -0.1233579, y: -0.16}
+      - {x: 0.011694063, y: -0.16020487}
+      - {x: 0.0117434515, y: -0.151969}
+      - {x: 0.022329554, y: -0.15169784}
+      - {x: 0.022114819, y: -0.14208376}
+      - {x: 0.032205865, y: -0.14179212}
+      - {x: 0.03162025, y: -0.109786004}
+      - {x: 0.031457648, y: -0.10643494}
+      - {x: 0.022275195, y: -0.1066585}
+      - {x: 0.022340521, y: -0.09907552}
+      - {x: 0.01207676, y: -0.098892175}
+      - {x: 0.012048629, y: -0.081896424}
+      - {x: 0.03130681, y: -0.081607945}
+      - {x: 0.03127677, y: -0.07113748}
+      - {x: 0.041950125, y: -0.070896134}
+      - {x: 0.04170932, y: -0.041331407}
+  m_UseDelaunayMesh: 0
 --- !u!50 &2590523162871828326
 Rigidbody2D:
   serializedVersion: 4
