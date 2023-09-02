@@ -2992,7 +2992,7 @@ Transform:
   m_GameObject: {fileID: 425061205}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -33.48, y: -1.5419998, z: -10}
+  m_LocalPosition: {x: -33.45, y: -1.5419998, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -12971,7 +12971,7 @@ Transform:
   m_GameObject: {fileID: 1834791209}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -33.48, y: -7.042, z: 0}
+  m_LocalPosition: {x: -33.45, y: -7.042, z: 0}
   m_LocalScale: {x: 5, y: 5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -13039,7 +13039,7 @@ MonoBehaviour:
   heart: 0
   level: 0
   died: 0
-  moveSpeed: 3
+  moveSpeed: 4
   jumpForce: 6
   groundCheck: {fileID: 1135593655}
   groundLayer:
@@ -14507,18 +14507,18 @@ SceneRoots:
   - {fileID: 425061207}
   - {fileID: 97251594}
   - {fileID: 1834791214}
+  - {fileID: 662346434}
+  - {fileID: 397515274}
+  - {fileID: 560156341}
+  - {fileID: 1838712348}
   - {fileID: 1821572878}
   - {fileID: 1791956592}
   - {fileID: 1912467852}
   - {fileID: 2049627406}
-  - {fileID: 560156341}
-  - {fileID: 1838712348}
-  - {fileID: 184401274}
-  - {fileID: 1875715561}
   - {fileID: 346030006}
   - {fileID: 214705312}
   - {fileID: 829987549}
   - {fileID: 510896309}
   - {fileID: 281111858}
-  - {fileID: 397515274}
-  - {fileID: 662346434}
+  - {fileID: 1875715561}
+  - {fileID: 184401274}

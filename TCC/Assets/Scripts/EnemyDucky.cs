@@ -23,8 +23,7 @@ public class EnemyDucky : MonoBehaviour
     void Update()
     {
         isGrounded = Physics2D.OverlapCircle(groundCheck.position, 0.1f, groundLayer);
-        Debug.Log(isGrounded);
-        if (!isDying)
+        if (!isDying && isGrounded)
         {
             float distanceToPlayer = Vector2.Distance(transform.position, player.position);
 
@@ -47,7 +46,10 @@ public class EnemyDucky : MonoBehaviour
         }
         else
         {
-            rb.velocity = Vector2.zero;
+            if (isGrounded)
+            {
+                rb.velocity = Vector2.zero;
+            }
         }
     }
 
@@ -63,7 +65,6 @@ public class EnemyDucky : MonoBehaviour
 
     public void EliminateEnemy()
     {
-        Debug.Log("Player killed enemy!");
         animator.SetBool("isDie", true);
         isDying = true;
         GetComponent<PolygonCollider2D>().enabled = false;

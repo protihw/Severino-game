@@ -73,9 +73,4 @@ public class LevelMapManager : MonoBehaviour
     {
         panel.SetActive(true);
     }
-
-    public void GameOver()
-    {
-        SceneManager.LoadScene(5);
-    }
 }

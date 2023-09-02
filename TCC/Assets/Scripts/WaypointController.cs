@@ -78,8 +78,6 @@ public class WaypointController : MonoBehaviour
             {
                 currentWaypoint++;
 
-                Debug.Log(currentWaypoint);
-
                 if (currentWaypoint == 1 || currentWaypoint == 6 || currentWaypoint == 11)
                 {
                     if (!isOnLevel)
@@ -102,9 +100,6 @@ public class WaypointController : MonoBehaviour
                     rb.velocity = Vector2.zero;
                     isPressed = false;
                 }
-
-                Debug.Log(PlayerPrefs.GetInt("Levels"));
-                Debug.Log(isOnLevel);
             }
         }
 

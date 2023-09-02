@@ -8,8 +8,8 @@ public class PlayerController : MonoBehaviour
     public int heart;
     public int level;
     public bool died;
-    public float moveSpeed = 5f;
-    public float jumpForce = 10f;
+    public float moveSpeed = 4f;
+    public float jumpForce = 6f;
     public Transform groundCheck;
     public LayerMask groundLayer;
 
@@ -28,7 +28,9 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         PlayerPrefs.SetInt("Lives", 3);
+        PlayerPrefs.SetInt("Score", 0);
         PlayerPrefs.SetInt("Levels", 2);
+
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
     }
@@ -61,6 +63,11 @@ public class PlayerController : MonoBehaviour
         else
         {
             animator.SetBool("isPressedJump", false);
+        }
+
+        if (PlayerPrefs.GetInt("Lives") <= 0)
+        {
+            LevelManager.levelManager.GameOver();
         }
     }
 
@@ -132,9 +139,12 @@ public class PlayerController : MonoBehaviour
         if (collision.gameObject.CompareTag("Coin"))
         {
             Debug.Log("Player collided with coin!");
+
             score++;
+            
             collision.gameObject.GetComponent<CircleCollider2D>().enabled = false;
-            Destroy(collision.gameObject,0.2f);
+            Destroy(collision.gameObject);
+
             ScoreManager.scoreManager.UpdateScore(score);
         }
 

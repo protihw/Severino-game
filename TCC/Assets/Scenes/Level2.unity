@@ -6845,7 +6845,7 @@ MonoBehaviour:
   heart: 0
   level: 0
   died: 0
-  moveSpeed: 3
+  moveSpeed: 4
   jumpForce: 6
   groundCheck: {fileID: 1504784113}
   groundLayer:
@@ -7713,11 +7713,11 @@ SceneRoots:
   - {fileID: 1212586312}
   - {fileID: 366326579}
   - {fileID: 792282086}
+  - {fileID: 771146755}
   - {fileID: 1159469006}
   - {fileID: 274790230}
   - {fileID: 1251843042}
   - {fileID: 21075458}
   - {fileID: 996930397}
-  - {fileID: 771146755}
-  - {fileID: 1673883462}
   - {fileID: 1288532947}
+  - {fileID: 1673883462}

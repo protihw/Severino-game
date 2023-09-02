@@ -49,7 +49,6 @@ public class LevelManager : MonoBehaviour
     public void ChangeSceneMenuScene()
     {
         SceneManager.LoadScene(0);
-        Debug.Log("Cheguei");
     }
 
     public void ChangeNextScene()
@@ -61,13 +60,19 @@ public class LevelManager : MonoBehaviour
     {
         panel.SetActive(true);
         panelCanvasGroup.interactable = true;
-        Debug.Log("Cheguei");
     }
 
     public void ExitSettings()
     {
         panel.SetActive(false);
         panelCanvasGroup.interactable = false;
-        Debug.Log("Cheguei");
+    }
+
+
+    public void GameOver()
+    {
+        SceneManager.LoadScene(5);
+        PlayerPrefs.SetInt("Lives", 3);
+        PlayerPrefs.SetInt("Score", 0);
     }
 }
