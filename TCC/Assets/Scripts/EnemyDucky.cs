@@ -4,10 +4,13 @@ using UnityEngine;
 public class EnemyDucky : MonoBehaviour
 {
     public float moveSpeed = 3f;
+    public Transform groundCheck;
+    public LayerMask groundLayer;
+
     private Transform player;
     private Rigidbody2D rb;
-    public Animator animator;
-    
+    private Animator animator;
+    private bool isGrounded = false;
     private bool isDying = false;
 
     void Start()
@@ -19,6 +22,8 @@ public class EnemyDucky : MonoBehaviour
 
     void Update()
     {
+        isGrounded = Physics2D.OverlapCircle(groundCheck.position, 0.1f, groundLayer);
+        Debug.Log(isGrounded);
         if (!isDying)
         {
             float distanceToPlayer = Vector2.Distance(transform.position, player.position);
@@ -33,7 +38,11 @@ public class EnemyDucky : MonoBehaviour
             }
             else
             {
-                rb.velocity = Vector2.zero;
+                if (isGrounded)
+                {
+                    rb.velocity = Vector2.zero;
+                }
+
             }
         }
         else
@@ -41,6 +50,7 @@ public class EnemyDucky : MonoBehaviour
             rb.velocity = Vector2.zero;
         }
     }
+
     void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Coin"))
@@ -56,7 +66,7 @@ public class EnemyDucky : MonoBehaviour
         Debug.Log("Player killed enemy!");
         animator.SetBool("isDie", true);
         isDying = true;
-        GetComponent<BoxCollider2D>().enabled = false;
+        GetComponent<PolygonCollider2D>().enabled = false;
         Destroy(gameObject, 0.5f);
     }
 }

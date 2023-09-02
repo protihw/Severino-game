@@ -4,10 +4,13 @@ using UnityEngine;
 public class EnemySnake : MonoBehaviour
 {
     public float moveSpeed = 3f;
+    public Transform groundCheck;
+    public LayerMask groundLayer;
+
     private Transform player;
     private Rigidbody2D rb;
-    public Animator animator;
-    
+    private Animator animator;
+    private bool isGrounded = false;
     private bool isDying = false;
 
     void Start()
@@ -19,6 +22,8 @@ public class EnemySnake : MonoBehaviour
 
     void Update()
     {
+        isGrounded = Physics2D.OverlapCircle(groundCheck.position, 0.1f, groundLayer);
+        Debug.Log(isGrounded);
         if (!isDying)
         {
             float distanceToPlayer = Vector2.Distance(transform.position, player.position);
@@ -33,7 +38,11 @@ public class EnemySnake : MonoBehaviour
             }
             else
             {
-                rb.velocity = Vector2.zero;
+                if (isGrounded)
+                {
+                    rb.velocity = Vector2.zero;
+                }
+                    
             }
         }
         else

@@ -69,14 +69,6 @@ public class WaypointController : MonoBehaviour
                 }
             }
 
-            if (isOnLevel == true)
-            {
-                if (Input.GetKey(KeyCode.E))
-                {
-                    LevelMapManager.levelMapManager.ChangeSceneLevel(currentWaypoint);
-                }
-            }
-
             movement.Normalize();
             rb.velocity = movement * moveSpeed;
             
@@ -86,20 +78,22 @@ public class WaypointController : MonoBehaviour
             {
                 currentWaypoint++;
 
+                Debug.Log(currentWaypoint);
+
                 if (currentWaypoint == 1 || currentWaypoint == 6 || currentWaypoint == 11)
                 {
                     if (!isOnLevel)
                     {
-                        LevelMapManager.levelMapManager.OnKey();
                         isOnLevel = true;
+                        LevelMapManager.levelMapManager.OnKey();
                     }
                 }
                 else
                 {
                     if (isOnLevel)
                     {
-                        LevelMapManager.levelMapManager.OutKey();
                         isOnLevel = false;
+                        LevelMapManager.levelMapManager.OutKey();
                     }
                 }
 
@@ -108,9 +102,17 @@ public class WaypointController : MonoBehaviour
                     rb.velocity = Vector2.zero;
                     isPressed = false;
                 }
-            }
 
-            animator.SetBool("isPressed", isPressed);
+                Debug.Log(PlayerPrefs.GetInt("Levels"));
+                Debug.Log(isOnLevel);
+            }
         }
+
+        if (isOnLevel == true && Input.GetKey(KeyCode.E))
+        {
+            LevelMapManager.levelMapManager.ChangeSceneLevel(currentWaypoint);
+        }
+
+        animator.SetBool("isPressed", isPressed);
     }
 }
