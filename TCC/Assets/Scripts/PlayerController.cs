@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections;  
 
 public class PlayerController : MonoBehaviour
 {
@@ -81,7 +82,10 @@ public class PlayerController : MonoBehaviour
                 heart--;
                 PlayerPrefs.SetInt("Lives", heart);
                 HeartManager.heartManager.UpdateHeart(heart);
+
                 animator.SetBool("isHit", true);
+
+                StartCoroutine(ReturnToNormalState());
             }
         }
 
@@ -103,7 +107,10 @@ public class PlayerController : MonoBehaviour
                 heart--;
                 PlayerPrefs.SetInt("Lives", heart);
                 HeartManager.heartManager.UpdateHeart(heart);
+
                 animator.SetBool("isHit", true);
+
+                StartCoroutine(ReturnToNormalState());
             }
         }
 
@@ -121,7 +128,10 @@ public class PlayerController : MonoBehaviour
             Debug.Log("Player collided with obstacle!");
             heart--;
             HeartManager.heartManager.UpdateHeart(heart);
+
             animator.SetBool("isHit", true);
+
+            StartCoroutine(ReturnToNormalState());                                                                                                                                                                
         }
 
         if (collision.gameObject.CompareTag("Checkpoint"))
@@ -137,5 +147,12 @@ public class PlayerController : MonoBehaviour
             }
             LevelManager.levelManager.ChangeNextScene();
         }
+    }
+
+    private IEnumerator ReturnToNormalState()
+    {
+        yield return new WaitForSeconds(2.0f);
+
+        animator.SetBool("isHit", false);
     }
 }
