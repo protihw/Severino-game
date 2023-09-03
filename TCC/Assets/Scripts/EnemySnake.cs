@@ -61,6 +61,11 @@ public class EnemySnake : MonoBehaviour
             // Ignorar colisão com objetos que têm a tag "coin".
             Physics2D.IgnoreCollision(GetComponent<Collider2D>(), collision.collider);
         }
+
+        if (collision.gameObject.CompareTag("Thorns"))
+        {
+            EliminateEnemy();
+        }
     }
 
     public void EliminateEnemy()
