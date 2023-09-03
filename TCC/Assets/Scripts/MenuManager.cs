@@ -12,6 +12,8 @@ public class MenuManager : MonoBehaviour
     {
         mainMenu.SetActive(true);
         optionsMenu.SetActive(false);
+
+        Time.timeScale = 1;
     }
 
     public void ChangeSceneSampleScene()

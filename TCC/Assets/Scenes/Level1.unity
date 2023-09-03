@@ -597,7 +597,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 1834791214}
-  followSpeed: 5
 --- !u!1 &107199212
 GameObject:
   m_ObjectHideFlags: 0
@@ -1991,7 +1990,6 @@ GameObject:
   m_Component:
   - component: {fileID: 283818609}
   - component: {fileID: 283818612}
-  - component: {fileID: 283818611}
   - component: {fileID: 283818610}
   m_Layer: 0
   m_Name: Cactus (8)
@@ -2050,18 +2048,6 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0.09}
   m_Size: {x: 0.63, y: 1.44}
   m_Direction: 0
---- !u!114 &283818611
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 283818608}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 327b3c22c12650d4ba4387fab2d1a43f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!212 &283818612
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2346,7 +2332,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 829987548}
         m_TargetAssemblyTypeName: LevelManager, Assembly-CSharp
         m_MethodName: ChangeSceneMenuScene
         m_Mode: 1
@@ -2535,7 +2521,6 @@ GameObject:
   m_Component:
   - component: {fileID: 375960915}
   - component: {fileID: 375960918}
-  - component: {fileID: 375960917}
   - component: {fileID: 375960916}
   m_Layer: 0
   m_Name: Cactus (7)
@@ -2594,18 +2579,6 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0.09}
   m_Size: {x: 0.63, y: 1.44}
   m_Direction: 0
---- !u!114 &375960917
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 375960914}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 327b3c22c12650d4ba4387fab2d1a43f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!212 &375960918
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3047,7 +3020,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   soundtrack: {fileID: 281111857}
-  toggle: {fileID: 0}
+  toggle: {fileID: 2089843285}
 --- !u!1 &518298850
 GameObject:
   m_ObjectHideFlags: 0
@@ -3349,7 +3322,6 @@ GameObject:
   m_Component:
   - component: {fileID: 562322240}
   - component: {fileID: 562322243}
-  - component: {fileID: 562322242}
   - component: {fileID: 562322241}
   m_Layer: 0
   m_Name: Cactus (5)
@@ -3408,18 +3380,6 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0.09}
   m_Size: {x: 0.63, y: 1.44}
   m_Direction: 0
---- !u!114 &562322242
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 562322239}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 327b3c22c12650d4ba4387fab2d1a43f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!212 &562322243
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -4920,7 +4880,6 @@ GameObject:
   m_Component:
   - component: {fileID: 938063790}
   - component: {fileID: 938063793}
-  - component: {fileID: 938063792}
   - component: {fileID: 938063791}
   m_Layer: 0
   m_Name: Cactus (3)
@@ -4979,18 +4938,6 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0.09}
   m_Size: {x: 0.63, y: 1.44}
   m_Direction: 0
---- !u!114 &938063792
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 938063789}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 327b3c22c12650d4ba4387fab2d1a43f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!212 &938063793
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -5053,7 +5000,6 @@ GameObject:
   m_Component:
   - component: {fileID: 986434765}
   - component: {fileID: 986434764}
-  - component: {fileID: 986434766}
   - component: {fileID: 986434767}
   m_Layer: 0
   m_Name: Cactus
@@ -5129,18 +5075,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 397515274}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &986434766
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 986434762}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 327b3c22c12650d4ba4387fab2d1a43f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!70 &986434767
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -6273,7 +6207,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 829987548}
         m_TargetAssemblyTypeName: LevelManager, Assembly-CSharp
         m_MethodName: OpenSettings
         m_Mode: 1
@@ -6545,7 +6479,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1311372870}
   - component: {fileID: 1311372873}
-  - component: {fileID: 1311372872}
   - component: {fileID: 1311372871}
   m_Layer: 0
   m_Name: Cactus (1)
@@ -6604,18 +6537,6 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0.09}
   m_Size: {x: 0.63, y: 1.44}
   m_Direction: 0
---- !u!114 &1311372872
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1311372869}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 327b3c22c12650d4ba4387fab2d1a43f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!212 &1311372873
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -8242,7 +8163,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1686363364}
   - component: {fileID: 1686363367}
-  - component: {fileID: 1686363366}
   - component: {fileID: 1686363365}
   m_Layer: 0
   m_Name: Cactus (6)
@@ -8301,18 +8221,6 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0.09}
   m_Size: {x: 0.63, y: 1.44}
   m_Direction: 0
---- !u!114 &1686363366
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1686363363}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 327b3c22c12650d4ba4387fab2d1a43f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!212 &1686363367
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -8437,7 +8345,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1693998150}
   - component: {fileID: 1693998153}
-  - component: {fileID: 1693998152}
   - component: {fileID: 1693998151}
   m_Layer: 0
   m_Name: Cactus (4)
@@ -8496,18 +8403,6 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0.09}
   m_Size: {x: 0.63, y: 1.44}
   m_Direction: 0
---- !u!114 &1693998152
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1693998149}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 327b3c22c12650d4ba4387fab2d1a43f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!212 &1693998153
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -9088,7 +8983,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 829987548}
         m_TargetAssemblyTypeName: LevelManager, Assembly-CSharp
         m_MethodName: ExitSettings
         m_Mode: 1
@@ -14143,7 +14038,7 @@ MonoBehaviour:
   onValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 510896310}
         m_TargetAssemblyTypeName: MuteAudio, Assembly-CSharp
         m_MethodName: Mute
         m_Mode: 1
@@ -14155,7 +14050,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 510896310}
         m_TargetAssemblyTypeName: MuteAudio, Assembly-CSharp
         m_MethodName: Unmute
         m_Mode: 1
