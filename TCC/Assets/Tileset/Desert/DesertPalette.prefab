@@ -421,7 +421,7 @@ GameObject:
   - component: {fileID: 4785414026596697698}
   - component: {fileID: 3229603643461176207}
   m_Layer: 0
-  m_Name: New Palette
+  m_Name: DesertPalette
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
