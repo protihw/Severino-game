@@ -1691,7 +1691,7 @@ GameObject:
   - component: {fileID: 9166901721066760756}
   - component: {fileID: 1773009917691028502}
   m_Layer: 0
-  m_Name: se deus quiser
+  m_Name: Level2Palette
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
