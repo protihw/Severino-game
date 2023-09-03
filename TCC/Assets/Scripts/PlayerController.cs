@@ -89,19 +89,7 @@ public class PlayerController : MonoBehaviour
             {
                 Debug.Log("Player collided with enemy snake!");
 
-                if (Physics2D.GetIgnoreCollision(GetComponent<Collider2D>(), collision.collider) == false)
-                {
-                    heart--;
-                }
-
-                animator.SetBool("isHit", true);
-                Physics2D.IgnoreCollision(GetComponent<Collider2D>(), collision.collider);
-
-                PlayerPrefs.SetInt("Lives", heart);
-                HeartManager.heartManager.UpdateHeart(heart);
-
-                StartCoroutine(ReturnToNormalState());
-                StartCoroutine(ReturnToVunelrable(collision));
+                GetHited(collision);
             }
         }
 
@@ -119,33 +107,8 @@ public class PlayerController : MonoBehaviour
             {
                 Debug.Log("Player collided with enemy ducky!");
 
-                if (Physics2D.GetIgnoreCollision(GetComponent<Collider2D>(), collision.collider) == false)
-                {
-                    heart--;
-                }
-
-                animator.SetBool("isHit", true);
-                Physics2D.IgnoreCollision(GetComponent<Collider2D>(), collision.collider);
-
-                PlayerPrefs.SetInt("Lives", heart);
-                HeartManager.heartManager.UpdateHeart(heart);
-
-                StartCoroutine(ReturnToNormalState());
-                StartCoroutine(ReturnToVunelrable(collision));
+                GetHited(collision);
             }
-        }
-
-        // colisão com as moedas
-        if (collision.gameObject.CompareTag("Coin"))
-        {
-            Debug.Log("Player collided with coin!");
-
-            score++;
-            
-            collision.gameObject.GetComponent<CircleCollider2D>().enabled = false;
-            Destroy(collision.gameObject);
-
-            ScoreManager.scoreManager.UpdateScore(score);
         }
 
         // colisão com obstaculos
@@ -153,19 +116,7 @@ public class PlayerController : MonoBehaviour
         {
             Debug.Log("Player collided with obstacle!");
 
-            if (Physics2D.GetIgnoreCollision(GetComponent<Collider2D>(), collision.collider) == false)
-            {
-                heart--;
-            }
-
-            animator.SetBool("isHit", true);
-            Physics2D.IgnoreCollision(GetComponent<Collider2D>(), collision.collider);
-
-            PlayerPrefs.SetInt("Lives", heart);
-            HeartManager.heartManager.UpdateHeart(heart);
-
-            StartCoroutine(ReturnToNormalState());
-            StartCoroutine(ReturnToVunelrable(collision));
+            GetHited(collision);
         }
 
         // colisão com espinhos
@@ -174,6 +125,20 @@ public class PlayerController : MonoBehaviour
             Debug.Log("Player collided with thorns!");
 
             LevelManager.levelManager.GameOver();
+        }
+
+        // colisão com as moedas
+        if (collision.gameObject.CompareTag("Coin"))
+        {
+            Debug.Log("Player collided with coin!");
+
+            score++;
+
+            collision.gameObject.GetComponent<CircleCollider2D>().enabled = false;
+            Destroy(collision.gameObject);
+
+            PlayerPrefs.SetInt("Score", score);
+            ScoreManager.scoreManager.UpdateScore(score);
         }
 
         // colisão com checkpoint
@@ -192,16 +157,33 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    private void GetHited(Collision2D collision)
+    {
+        if (!Physics2D.GetIgnoreCollision(GetComponent<Collider2D>(), collision.collider))
+        {
+            heart--;
+
+            animator.SetBool("isHit", true);
+            Physics2D.IgnoreCollision(GetComponent<Collider2D>(), collision.collider, true);
+
+            PlayerPrefs.SetInt("Lives", heart);
+            HeartManager.heartManager.UpdateHeart(heart);
+
+            StartCoroutine(ReturnToNormalState());
+            StartCoroutine(ReturnToVunelrable(collision));
+        }
+    }
+
     private IEnumerator ReturnToNormalState()
     {
-        yield return new WaitForSeconds(2.0f);
+        yield return new WaitForSeconds(3f);
 
         animator.SetBool("isHit", false);
     }
 
     private IEnumerator ReturnToVunelrable(Collision2D collision)
     {
-        yield return new WaitForSeconds(2.0f);
+        yield return new WaitForSeconds(3f);
 
         Physics2D.IgnoreCollision(GetComponent<Collider2D>(), collision.collider, false);
     }
