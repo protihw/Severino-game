@@ -219,7 +219,7 @@ GameObject:
   - component: {fileID: 15726683}
   - component: {fileID: 15726682}
   m_Layer: 0
-  m_Name: burning_loop_2_0
+  m_Name: fire
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
