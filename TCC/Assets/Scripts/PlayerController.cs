@@ -176,14 +176,6 @@ public class PlayerController : MonoBehaviour
             LevelManager.levelManager.GameOver();
         }
 
-        // colisão com a room
-        if (collision.gameObject.CompareTag("Room"))
-        {
-            Debug.Log("Player fell off!");
-
-            LevelManager.levelManager.GameOver();
-        }
-
         // colisão com checkpoint
         if (collision.gameObject.CompareTag("Checkpoint"))
         {
