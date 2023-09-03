@@ -33,6 +33,7 @@ public class EnemySnake : MonoBehaviour
                 rb.velocity = direction * moveSpeed;
 
                 float angle = Mathf.Atan2(0, direction.x) * Mathf.Rad2Deg;
+
                 transform.rotation = Quaternion.Euler(0, angle, 0);
             }
             else

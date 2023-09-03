@@ -9,6 +9,8 @@ TagManager:
   - EnemySnake
   - EnemyDucky
   - Checkpoint
+  - Thorns
+  - Room
   layers:
   - Default
   - TransparentFX

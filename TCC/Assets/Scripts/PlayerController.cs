@@ -1,5 +1,7 @@
 using UnityEngine;
-using System.Collections;  
+using System.Collections;
+using Unity.VisualScripting;
+using System.Linq;
 
 public class PlayerController : MonoBehaviour
 {
@@ -109,9 +111,6 @@ public class PlayerController : MonoBehaviour
             float playerY = transform.position.y;
             float enemyY = collision.gameObject.transform.position.y;
 
-            Debug.Log(playerY);
-            Debug.Log(enemyY);
-
             if (playerY > enemyY)
             {
                 collision.gameObject.GetComponent<EnemyDucky>().EliminateEnemy();
@@ -136,6 +135,7 @@ public class PlayerController : MonoBehaviour
             }
         }
 
+        // colisão com as moedas
         if (collision.gameObject.CompareTag("Coin"))
         {
             Debug.Log("Player collided with coin!");
@@ -168,6 +168,23 @@ public class PlayerController : MonoBehaviour
             StartCoroutine(ReturnToVunelrable(collision));
         }
 
+        // colisão com espinhos
+        if (collision.gameObject.CompareTag("Thorns"))
+        {
+            Debug.Log("Player collided with thorns!");
+
+            LevelManager.levelManager.GameOver();
+        }
+
+        // colisão com a room
+        if (collision.gameObject.CompareTag("Room"))
+        {
+            Debug.Log("Player fell off!");
+
+            LevelManager.levelManager.GameOver();
+        }
+
+        // colisão com checkpoint
         if (collision.gameObject.CompareTag("Checkpoint"))
         {
             Debug.Log("Player collided with checkpoint!");
