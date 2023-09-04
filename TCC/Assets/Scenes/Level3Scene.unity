@@ -227,7 +227,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 772.8, y: 406.2}
+  m_AnchoredPosition: {x: 788.7001, y: 328.47003}
   m_SizeDelta: {x: 85.79, y: 45.21}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &78391717
@@ -1787,7 +1787,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 772.80023, y: 470.95468}
+  m_AnchoredPosition: {x: 788.7003, y: 393.2247}
   m_SizeDelta: {x: 85.79, y: 45.21}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1195065424
@@ -2592,7 +2592,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -623.5, y: 446.5}
+  m_AnchoredPosition: {x: -607.5999, y: 368.77002}
   m_SizeDelta: {x: -1437.39, y: -792.03}
   m_Pivot: {x: 0.36593208, y: 0.36672705}
 --- !u!225 &1673325654
@@ -2718,7 +2718,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 786, y: 408.07}
+  m_AnchoredPosition: {x: 801.9001, y: 330.34003}
   m_SizeDelta: {x: 32.98, y: 34.03}
   m_Pivot: {x: 0.50000095, y: 0.49999982}
 --- !u!114 &1778790732
@@ -3115,7 +3115,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 785.99713, y: 470.91022}
+  m_AnchoredPosition: {x: 801.8972, y: 393.18024}
   m_SizeDelta: {x: 26.53, y: 27.51}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1965665840
@@ -3191,7 +3191,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0.04}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -800.9, y: 472.72998}
+  m_AnchoredPosition: {x: -785, y: 395}
   m_SizeDelta: {x: 34.62, y: 31.99}
   m_Pivot: {x: 0.4999999, y: 0.49999997}
 --- !u!114 &1988756592
@@ -3477,7 +3477,7 @@ Transform:
   m_GameObject: {fileID: 2076540607}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.014464378, y: 0.013799995, z: -10}
+  m_LocalPosition: {x: 1.6140556, y: 0.013110012, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children: []
