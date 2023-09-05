@@ -15,6 +15,8 @@ public class PlayerController : MonoBehaviour
     public Transform groundCheck;
     public LayerMask groundLayer;
 
+    public bool atacando;
+
     private Rigidbody2D rb;
     private Animator animator;
     private bool isGrounded = false;
@@ -124,13 +126,7 @@ public class PlayerController : MonoBehaviour
             GetHited(collision);
         }
 
-        // colisão com obstaculos
-        if (collision.gameObject.CompareTag("Box"))
-        {
-            Debug.Log("Player collided with obstacle!");
 
-            GetHited(collision);
-        }
 
         // colisão com espinhos
         if (collision.gameObject.CompareTag("Thorns"))
@@ -169,7 +165,15 @@ public class PlayerController : MonoBehaviour
             LevelManager.levelManager.ChangeNextScene();
         }
     }
-
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        Debug.Log(collision.gameObject.name);
+        if (collision.gameObject.CompareTag("Box") && atacando)
+        {
+            collision.GetComponent<Animator>().Play("BoxDying");
+            Destroy(collision.gameObject,0.5f);  
+        }
+    }
     private void GetHited(Collision2D collision)
     {
         if (!Physics2D.GetIgnoreCollision(GetComponent<Collider2D>(), collision.collider))
