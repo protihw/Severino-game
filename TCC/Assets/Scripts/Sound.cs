@@ -5,10 +5,19 @@ using UnityEngine;
 public class Sound : MonoBehaviour
 {
     public static Sound Instace;
-    public AudioSource musicSource, buttonsSource, effectsSource, voiceSource;
-    public AudioClip[] buttonsClip, errorClip, acertosClip, voicesClip, musicClip;
-    public AudioClip correr, pular;
+
+    [Header("Musica")]
+    public AudioSource musicSource;
+    public AudioClip musicaMenu, musicaDeserto,musicaMar,musicaCidade,musicaGameOver;
+
+    [Header("Inimigo")]
+    public AudioSource inimigoSource;
+    public AudioClip cobra;
+    public AudioClip ducky;
+
+    [Header("Player")]
     public AudioSource PlayerSource;
+    public AudioClip correr, pular, dano;
     public bool dontDestroyOnLoad = true;
     private void Awake()
     {
@@ -44,32 +53,38 @@ public class Sound : MonoBehaviour
         return false;
     }
 
+    //Player
     public void PLayerCorrerEffect()
     {
         PlayerSource.PlayOneShot(correr);
     }
-    public void PlayButtonEffect()
+    public void PLayerpularEffect()
     {
-        buttonsSource.PlayOneShot(buttonsClip[Random.Range(0, buttonsClip.Length)]);
+        PlayerSource.PlayOneShot(pular);
     }
-    public void PlayErrorEffect()
+
+
+
+    //Inimigos
+    public void InimigoCobrar()
     {
-        effectsSource.PlayOneShot(errorClip[Random.Range(0, errorClip.Length)]);
+        inimigoSource.PlayOneShot(cobra);
     }
-    public void PlayAcertoEffect()
+
+    public void Inimigoducky()
     {
-        effectsSource.PlayOneShot(acertosClip[Random.Range(0, acertosClip.Length)]);
+        inimigoSource.PlayOneShot(ducky);
     }
-    public void PlayVoiceEffect(int fase)
+
+    //Musicas
+
+    public void MudarMusicaMenu()
     {
-        StartCoroutine(NewVoice(fase));
+        musicSource.Stop();
+        musicSource.clip = musicaMenu;
+        musicSource.Play();
     }
-    IEnumerator NewVoice(int fase)
-    {
-        voiceSource.Stop();
-        yield return new WaitForSeconds(0.1f);
-        voiceSource.PlayOneShot(voicesClip[fase]);
-    }
+
 
     public void MuteUnmuteGame()
     {
@@ -77,17 +92,15 @@ public class Sound : MonoBehaviour
         {
             musicSource.Pause();
             musicSource.volume = 0;
-            effectsSource.volume = 0;
-            buttonsSource.volume = 0;
-            voiceSource.volume = 0;
+            inimigoSource.volume = 0;
+            PlayerSource.volume = 0;
         }
         else
         {
             musicSource.UnPause();
             musicSource.volume = 0.5f;
-            effectsSource.volume = 1;
-            buttonsSource.volume = 1;
-            voiceSource.volume = 1;
+            inimigoSource.volume = 1;
+            PlayerSource.volume = 1;
         }
     }
 }

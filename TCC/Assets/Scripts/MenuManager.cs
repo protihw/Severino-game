@@ -9,10 +9,13 @@ public class MenuManager : MonoBehaviour
     public GameObject mainMenu, optionsMenu;
     void Start()
     {
+
         mainMenu.SetActive(true);
         optionsMenu.SetActive(false);
 
         Time.timeScale = 1;
+
+        Sound.Instace.MudarMusicaMenu();
     }
 
     public void ChangeSceneSampleScene()
@@ -34,7 +37,7 @@ public class MenuManager : MonoBehaviour
 
     public void ChangePanelCredits()
     {
-        Application.OpenURL("file:///C:/Users/Aluno/Documents/GitHub/TCC/img/index.html");
+        Application.OpenURL("https://64f7446191311f1505307e11--luxury-fox-82a8d5.netlify.app");
     }
 
 

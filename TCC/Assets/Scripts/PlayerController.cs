@@ -192,6 +192,7 @@ public class PlayerController : MonoBehaviour
             heart--;
 
             animator.SetBool("isHit", true);
+            if (!collision.gameObject.CompareTag("Obstacle"))
             Physics2D.IgnoreCollision(GetComponent<Collider2D>(), collision.collider, true);
 
             PlayerPrefs.SetInt("Lives", heart);

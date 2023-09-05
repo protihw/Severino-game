@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class MuteAudio : MonoBehaviour
 {
     public static MuteAudio instance;
-    public AudioSource soundtrack;
+    public AudioSource AudioSource;
     public Toggle toggle;
 
     void Awake(){
@@ -15,14 +15,14 @@ public class MuteAudio : MonoBehaviour
 
     void Start()
     {
-        soundtrack.mute = false;
+        AudioSource.mute = false;
     }
 
     public void Mute() 
     {
         if (toggle.isOn == true)
         {
-            soundtrack.mute = true;
+            Sound.Instace.MuteUnmuteGame();
         }
     }
 
@@ -30,7 +30,7 @@ public class MuteAudio : MonoBehaviour
     {
         if (toggle.isOn == false)
         {
-            soundtrack.mute = false;
+            Sound.Instace.MuteUnmuteGame();
         }
     }
 }
