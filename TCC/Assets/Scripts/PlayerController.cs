@@ -75,6 +75,8 @@ public class PlayerController : MonoBehaviour
             rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
             animator.SetBool("isPressedJump", true);
 
+            Sound.Instace.PLayerpularEffect();
+
         }
         else
         {
@@ -141,6 +143,10 @@ public class PlayerController : MonoBehaviour
         // colisão com as moedas
         if (collision.gameObject.CompareTag("Coin"))
         {
+
+            Sound.Instace.ScenarioCoin();
+
+
             score++;
 
             collision.gameObject.GetComponent<CircleCollider2D>().enabled = false;
@@ -167,11 +173,15 @@ public class PlayerController : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        //box
+
         Debug.Log(collision.gameObject.name);
         if (collision.gameObject.CompareTag("Box") && atacando)
         {
             collision.GetComponent<Animator>().Play("BoxDying");
-            Destroy(collision.gameObject,0.5f);  
+            Destroy(collision.gameObject,0.5f);
+            Sound.Instace.ScenarioBox();
+
         }
 
         if (collision.gameObject.CompareTag("EnemySnake") && atacando)
@@ -197,6 +207,8 @@ public class PlayerController : MonoBehaviour
 
             PlayerPrefs.SetInt("Lives", heart);
             HeartManager.heartManager.UpdateHeart(heart);
+
+            Sound.Instace.PLayerdanoEffect();
 
             StartCoroutine(ReturnToNormalState());
             StartCoroutine(ReturnToVunelrable(collision));

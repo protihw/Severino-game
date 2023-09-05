@@ -19,6 +19,12 @@ public class Sound : MonoBehaviour
     public AudioSource PlayerSource;
     public AudioClip correr, pular, dano;
     public bool dontDestroyOnLoad = true;
+
+    [Header("Scenario")]
+    public AudioSource scenarioSource;
+    public AudioClip box;
+    public AudioClip coin;
+
     private void Awake()
     {
         if (Instace == null)
@@ -62,6 +68,11 @@ public class Sound : MonoBehaviour
     {
         PlayerSource.PlayOneShot(pular);
     }
+    public void PLayerdanoEffect()
+    {
+        PlayerSource.PlayOneShot(dano);
+    }
+
 
 
 
@@ -76,6 +87,18 @@ public class Sound : MonoBehaviour
         inimigoSource.PlayOneShot(ducky);
     }
 
+    //Scenario
+
+    public void ScenarioBox()
+    {
+        scenarioSource.PlayOneShot(box);
+    }
+
+    public void ScenarioCoin()
+    {
+        scenarioSource.PlayOneShot(coin);
+    }
+
     //Musicas
 
     public void MudarMusicaMenu()
@@ -84,6 +107,37 @@ public class Sound : MonoBehaviour
         musicSource.clip = musicaMenu;
         musicSource.Play();
     }
+
+    public void MudarMusicaDeserto()
+    {
+        musicSource.Stop();
+        musicSource.clip = musicaDeserto;
+        musicSource.Play();
+    }
+
+    public void MudarMusicaMar()
+    {
+        musicSource.Stop();
+        musicSource.clip = musicaMar;
+        musicSource.Play();
+    }
+
+    public void MudarMusicaCidade()
+    {
+        musicSource.Stop();
+        musicSource.clip = musicaCidade;
+        musicSource.Play();
+    }
+
+    public void MudarMusicaGameOver()
+    {
+        musicSource.Stop();
+        musicSource.clip = musicaGameOver;
+        musicSource.Play();
+    }
+
+
+
 
 
     public void MuteUnmuteGame()

@@ -13,11 +13,15 @@ public class EnemyDucky : MonoBehaviour
     private bool isGrounded = false;
     private bool isDying = false;
 
+    public float timer; 
+
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player").transform;
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
+        Sound.Instace.Inimigoducky();
+
     }
 
     void Update()
@@ -35,6 +39,15 @@ public class EnemyDucky : MonoBehaviour
                 float angle = Mathf.Atan2(0, direction.x) * Mathf.Rad2Deg;
 
                 transform.rotation = Quaternion.Euler(0, angle, 0);
+
+                timer++;
+
+                if (timer > 200)
+                {
+                    Debug.Log("DUFVSGHDIUF SOm");
+                    Sound.Instace.Inimigoducky();
+                    timer = 0;
+                }
             }
             else
             {

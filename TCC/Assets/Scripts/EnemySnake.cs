@@ -13,6 +13,8 @@ public class EnemySnake : MonoBehaviour
     private bool isGrounded = false;
     private bool isDying = false;
 
+    public float timer;
+
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player").transform;
@@ -26,6 +28,7 @@ public class EnemySnake : MonoBehaviour
         if (!isDying && isGrounded)
         {
             float distanceToPlayer = Vector2.Distance(transform.position, player.position);
+           
 
             if (distanceToPlayer <= 5)
             {
@@ -35,6 +38,14 @@ public class EnemySnake : MonoBehaviour
                 float angle = Mathf.Atan2(0, direction.x) * Mathf.Rad2Deg;
 
                 transform.rotation = Quaternion.Euler(0, angle, 0);
+
+                timer++;
+
+                if (timer > 200)
+                {
+                    Sound.Instace.InimigoCobrar();
+                    timer = 0;
+                }
             }
             else
             {
@@ -73,7 +84,7 @@ public class EnemySnake : MonoBehaviour
         animator.SetBool("isDie", true);
         isDying = true;
         GetComponent<BoxCollider2D>().enabled = false;
-        Sound.Instace.InimigoCobrar();
+        //Sound.Instace.InimigoCobrar();
         Destroy(gameObject, 0.3f);
     }   
 }

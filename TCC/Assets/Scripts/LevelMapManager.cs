@@ -13,6 +13,7 @@ public class LevelMapManager : MonoBehaviour
     void Awake()
     {
         levelMapManager = this;
+        Sound.Instace.MudarMusicaMenu();
     }
 
     void Start()

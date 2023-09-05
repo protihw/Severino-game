@@ -14,7 +14,25 @@ public class LevelManager : MonoBehaviour
     void Awake()
     {
         levelManager = this;
+        switch (SceneManager.GetActiveScene().buildIndex)
+        {
+            case 2:
+                Sound.Instace.MudarMusicaDeserto();
+                break;
+               
+            case 3:
+                Sound.Instace.MudarMusicaMar();
+                break;
+            case 4:
+                Sound.Instace.MudarMusicaCidade();
+                break;
+
+            case 5:
+                Sound.Instace.MudarMusicaGameOver();
+                break;
+        }
     }
+
 
     void Start()
     {

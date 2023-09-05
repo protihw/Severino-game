@@ -1593,18 +1593,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   musicSource: {fileID: 750112108}
-  buttonsSource: {fileID: 0}
-  effectsSource: {fileID: 0}
-  voiceSource: {fileID: 0}
-  buttonsClip: []
-  errorClip: []
-  acertosClip: []
-  voicesClip: []
-  musicClip: []
+  musicaMenu: {fileID: 0}
+  musicaDeserto: {fileID: 0}
+  musicaMar: {fileID: 0}
+  musicaCidade: {fileID: 0}
+  musicaGameOver: {fileID: 0}
+  inimigoSource: {fileID: 0}
+  cobra: {fileID: 0}
+  ducky: {fileID: 0}
+  PlayerSource: {fileID: 0}
   correr: {fileID: 0}
   pular: {fileID: 0}
-  PlayerSource: {fileID: 0}
+  dano: {fileID: 0}
   dontDestroyOnLoad: 1
+  scenarioSource: {fileID: 0}
+  box: {fileID: 0}
+  coin: {fileID: 0}
 --- !u!4 &750112110
 Transform:
   m_ObjectHideFlags: 0
@@ -3216,7 +3220,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 1393957066}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 81b023e50301cbe4e9f6231e198d7b67, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -3296,7 +3300,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45721b26242e2094cacb674bb6a2d572, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  soundtrack: {fileID: 1288943215}
   toggle: {fileID: 1908184378}
 --- !u!4 &1410585126
 Transform:

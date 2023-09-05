@@ -5,17 +5,12 @@ using UnityEngine.UI;
 
 public class MuteAudio : MonoBehaviour
 {
-    public static MuteAudio instance;
-    public AudioSource AudioSource;
-    public Toggle toggle;
 
-    void Awake(){
-        instance = this;
-    }
+    public Toggle toggle;
 
     void Start()
     {
-        AudioSource.mute = false;
+     
     }
 
     public void Mute() 
@@ -30,7 +25,7 @@ public class MuteAudio : MonoBehaviour
     {
         if (toggle.isOn == false)
         {
-            Sound.Instace.MuteUnmuteGame();
+          Sound.Instace.MuteUnmuteGame();
         }
     }
 }
