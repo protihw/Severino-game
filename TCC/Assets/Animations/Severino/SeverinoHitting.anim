@@ -84,4 +84,18 @@ AnimationClip:
   m_EulerEditorCurves: []
   m_HasGenericRootTransform: 0
   m_HasMotionFloatCurves: 0
-  m_Events: []
+  m_Events:
+  - time: 0
+    functionName: EnableWhipCollider
+    data: 
+    objectReferenceParameter: {fileID: 11500000, guid: a17253c5335275740a7d3db87c6f17e5, type: 3}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 0.41666666
+    functionName: DisableWhipCollider
+    data: 
+    objectReferenceParameter: {fileID: 11500000, guid: a17253c5335275740a7d3db87c6f17e5, type: 3}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0

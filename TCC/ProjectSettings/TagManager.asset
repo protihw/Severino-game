@@ -10,6 +10,7 @@ TagManager:
   - EnemyDucky
   - Checkpoint
   - Thorns
+  - Box
   layers:
   - Default
   - TransparentFX
