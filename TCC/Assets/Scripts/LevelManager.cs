@@ -16,7 +16,6 @@ public class LevelManager : MonoBehaviour
         levelManager = this;
     }
 
-    // Start is called before the first frame update
     void Start()
     {
         panel.SetActive(false);
@@ -45,7 +44,6 @@ public class LevelManager : MonoBehaviour
             
     }
 
-    // Update is called once per frame
     public void ChangeSceneMenuScene()
     {
         SceneManager.LoadScene(0);

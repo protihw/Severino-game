@@ -94,8 +94,6 @@ public class PlayerController : MonoBehaviour
             }
             else
             {
-                Debug.Log("Player collided with enemy snake!");
-
                 GetHited(collision);
             }
         }
@@ -112,8 +110,6 @@ public class PlayerController : MonoBehaviour
             }
             else
             {
-                Debug.Log("Player collided with enemy ducky!");
-
                 GetHited(collision);
             }
         }
@@ -121,26 +117,18 @@ public class PlayerController : MonoBehaviour
         // colisão com obstaculos
         if (collision.gameObject.CompareTag("Obstacle"))
         {
-            Debug.Log("Player collided with obstacle!");
-
             GetHited(collision);
         }
-
-
 
         // colisão com espinhos
         if (collision.gameObject.CompareTag("Thorns"))
         {
-            Debug.Log("Player collided with thorns!");
-
             LevelManager.levelManager.GameOver();
         }
 
         // colisão com as moedas
         if (collision.gameObject.CompareTag("Coin"))
         {
-            Debug.Log("Player collided with coin!");
-
             score++;
 
             collision.gameObject.GetComponent<CircleCollider2D>().enabled = false;
@@ -153,7 +141,6 @@ public class PlayerController : MonoBehaviour
         // colisão com checkpoint
         if (collision.gameObject.CompareTag("Checkpoint"))
         {
-            Debug.Log("Player collided with checkpoint!");
             if (PlayerPrefs.GetInt("Levels") > 2)
             {
                 level++;
@@ -165,6 +152,7 @@ public class PlayerController : MonoBehaviour
             LevelManager.levelManager.ChangeNextScene();
         }
     }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         Debug.Log(collision.gameObject.name);
@@ -173,7 +161,18 @@ public class PlayerController : MonoBehaviour
             collision.GetComponent<Animator>().Play("BoxDying");
             Destroy(collision.gameObject,0.5f);  
         }
+
+        if (collision.gameObject.CompareTag("EnemySnake") && atacando)
+        {
+            collision.gameObject.GetComponent<EnemySnake>().EliminateEnemy();
+        }
+
+        if (collision.gameObject.CompareTag("EnemyDucky") && atacando)
+        {
+            collision.gameObject.GetComponent<EnemyDucky>().EliminateEnemy();
+        }
     }
+
     private void GetHited(Collision2D collision)
     {
         if (!Physics2D.GetIgnoreCollision(GetComponent<Collider2D>(), collision.collider))
