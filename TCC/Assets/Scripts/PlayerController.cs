@@ -67,6 +67,11 @@ public class PlayerController : MonoBehaviour
             animator.SetBool("isPressedJump", false);
         }
 
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            animator.SetTrigger("isHiting");
+        }
+
         if (PlayerPrefs.GetInt("Lives") <= 0)
         {
             LevelManager.levelManager.GameOver();
@@ -113,6 +118,14 @@ public class PlayerController : MonoBehaviour
 
         // colisão com obstaculos
         if (collision.gameObject.CompareTag("Obstacle"))
+        {
+            Debug.Log("Player collided with obstacle!");
+
+            GetHited(collision);
+        }
+
+        // colisão com obstaculos
+        if (collision.gameObject.CompareTag("Box"))
         {
             Debug.Log("Player collided with obstacle!");
 
