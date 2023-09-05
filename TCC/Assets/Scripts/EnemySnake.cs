@@ -73,6 +73,7 @@ public class EnemySnake : MonoBehaviour
         animator.SetBool("isDie", true);
         isDying = true;
         GetComponent<PolygonCollider2D>().enabled = false;
+        Sound.Instace.PlayErrorEffect();
         Destroy(gameObject, 0.3f);
     }   
 }

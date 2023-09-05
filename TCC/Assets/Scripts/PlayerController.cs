@@ -15,6 +15,8 @@ public class PlayerController : MonoBehaviour
     public Transform groundCheck;
     public LayerMask groundLayer;
 
+    public int timerEffect;
+
     public bool atacando;
 
     private Rigidbody2D rb;
@@ -45,6 +47,15 @@ public class PlayerController : MonoBehaviour
 
         float horizontalInput = Input.GetAxis("Horizontal");
         rb.velocity = new Vector2(horizontalInput * moveSpeed, rb.velocity.y);
+        if (isGrounded && horizontalInput != 0)
+        {
+            timerEffect++;
+            if (timerEffect >= 200)
+            {
+                Sound.Instace.PLayerCorrerEffect();
+                timerEffect = 0;
+            }
+        }
 
         // Virar o jogador para o lado esquerdo (escala x negativa) quando ele se move para a esquerda
         if (horizontalInput < 0)
@@ -63,6 +74,7 @@ public class PlayerController : MonoBehaviour
         {
             rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
             animator.SetBool("isPressedJump", true);
+
         }
         else
         {
