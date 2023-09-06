@@ -90,15 +90,15 @@ public class LevelManager : MonoBehaviour
     public void GameOver() 
     {
         SceneManager.LoadScene(5);
+
+        PlayerPrefs.SetInt("Lives", 3);
+        PlayerPrefs.SetInt("Score", 0);
     }
 
     public void GameOverAnimation()
     {
         Animator animatorPlayer = PlayerController.player.GetComponent<Animator>();
         animatorPlayer.SetBool("isDied", true);
-
-        PlayerPrefs.SetInt("Lives", 3);
-        PlayerPrefs.SetInt("Score", 0);
 
         StartCoroutine(WaitForAnimationAndGameOver(animatorPlayer));
     }
