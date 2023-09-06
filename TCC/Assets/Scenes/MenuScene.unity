@@ -3104,6 +3104,7 @@ MonoBehaviour:
   musicaDeserto: {fileID: 8300000, guid: d971ae6e384854a48a9cfe6c8b665348, type: 3}
   musicaMar: {fileID: 8300000, guid: bb6768600fa504341bbe0f8aaaf5661b, type: 3}
   musicaGameOver: {fileID: 8300000, guid: b40b92db767cecf4faa9691b0740545b, type: 3}
+  musicaMap: {fileID: 8300000, guid: 3924a701df4b0c24d9181be75f8b6aa3, type: 3}
   musicity: {fileID: 1946291121}
   musicacidade: {fileID: 8300000, guid: bf5e16cca5e6c4743abbbc76b6413a7f, type: 3}
   inimigoSource: {fileID: 1946291119}

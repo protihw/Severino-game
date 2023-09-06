@@ -8,7 +8,7 @@ public class Sound : MonoBehaviour
 
     [Header("Musica")]
     public AudioSource musicSource;
-    public AudioClip musicaMenu, musicaDeserto,musicaMar,musicaGameOver;
+    public AudioClip musicaMenu, musicaDeserto,musicaMar,musicaGameOver, musicaMap;
 
     [Header("cidade")]
     public AudioSource musicity;
@@ -124,6 +124,13 @@ public class Sound : MonoBehaviour
         musicSource.clip = musicaDeserto;
         musicSource.Play();
     }
+    public void MudarMusicaMap()
+    {
+        musicSource.Stop();
+        musicSource.clip = musicaMap;
+        musicSource.Play();
+    }
+
 
     public void MudarMusicaMar()
     {
