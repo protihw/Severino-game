@@ -53,7 +53,6 @@ public class EnemySnake : MonoBehaviour
                 {
                     rb.velocity = Vector2.zero;
                 }
-                    
             }
         }
         else
