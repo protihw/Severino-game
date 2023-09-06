@@ -22,14 +22,14 @@ public class WhipController : MonoBehaviour
     {
         // Desativa o whipCollider ao final da animação
         whipCollider.enabled = false;
-        PlayerController.player.atacando = false;
+        PlayerController.player.atacking = false;
     }
 
     public void EnableWhipCollider()
     {
         // Ativa o whipCollider no início da animação
         whipCollider.enabled = true;
-        PlayerController.player.atacando = true;
+        PlayerController.player.atacking = true;
         Sound.Instace.PLayerchicoteEffect();
     }
 }

@@ -11,9 +11,11 @@ public class LevelManager : MonoBehaviour
     public CanvasGroup panelCanvasGroup;
     public bool isOpen = false;
     public SceneManager currentScene;
+
     void Awake()
     {
         levelManager = this;
+
         switch (SceneManager.GetActiveScene().buildIndex)
         {
             case 2:
@@ -85,10 +87,26 @@ public class LevelManager : MonoBehaviour
     }
 
 
-    public void GameOver()
+    public void GameOver() 
     {
         SceneManager.LoadScene(5);
+    }
+
+    public void GameOverAnimation()
+    {
+        Animator animatorPlayer = PlayerController.player.GetComponent<Animator>();
+        animatorPlayer.SetBool("isDied", true);
+
         PlayerPrefs.SetInt("Lives", 3);
         PlayerPrefs.SetInt("Score", 0);
+
+        StartCoroutine(WaitForAnimationAndGameOver(animatorPlayer));
+    }
+
+    private IEnumerator WaitForAnimationAndGameOver(Animator animator)
+    {
+        yield return new WaitForSeconds(3.470f);
+
+        GameOver();
     }
 }

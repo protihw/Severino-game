@@ -17,11 +17,11 @@ public class EnemyDucky : MonoBehaviour
 
     void Start()
     {
+        Sound.Instace.Inimigoducky();
+
         player = GameObject.FindGameObjectWithTag("Player").transform;
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
-        Sound.Instace.Inimigoducky();
-
     }
 
     void Update()
@@ -44,8 +44,8 @@ public class EnemyDucky : MonoBehaviour
 
                 if (timer > 200)
                 {
-                    Debug.Log("Som hahah");
                     Sound.Instace.Inimigoducky();
+
                     timer = 0;
                 }
             }

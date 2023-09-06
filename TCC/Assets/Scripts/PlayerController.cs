@@ -17,11 +17,13 @@ public class PlayerController : MonoBehaviour
 
     public int timerEffect;
 
-    public bool atacando;
+    public bool atacking;
 
     private Rigidbody2D rb;
     private Animator animator;
     private bool isGrounded = false;
+    public PolygonCollider2D room;
+
 
     void Awake()
     {
@@ -90,8 +92,14 @@ public class PlayerController : MonoBehaviour
 
         if (PlayerPrefs.GetInt("Lives") <= 0)
         {
+            LevelManager.levelManager.GameOverAnimation();
+        }
+
+        if (!room.bounds.Contains(transform.position))
+        {
             LevelManager.levelManager.GameOver();
         }
+        
     }
 
     void OnCollisionEnter2D(Collision2D collision)
@@ -146,7 +154,6 @@ public class PlayerController : MonoBehaviour
 
             Sound.Instace.ScenarioCoin();
 
-
             score++;
 
             collision.gameObject.GetComponent<CircleCollider2D>().enabled = false;
@@ -173,26 +180,28 @@ public class PlayerController : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        //box
-
         Debug.Log(collision.gameObject.name);
-        if (collision.gameObject.CompareTag("Box") && atacando)
+        if (collision.gameObject.CompareTag("Box") && atacking)
         {
-            collision.GetComponent<Animator>().Play("BoxDying");
-            Destroy(collision.gameObject,0.5f);
             Sound.Instace.ScenarioBox();
 
+            collision.GetComponent<Animator>().Play("BoxDying");
+
+            collision.gameObject.GetComponent<BoxCollider2D>().enabled = false;
+            Destroy(collision.gameObject, 0.5f);
         }
 
-        if (collision.gameObject.CompareTag("EnemySnake") && atacando)
+        if (collision.gameObject.CompareTag("EnemySnake") && atacking)
         {
             collision.gameObject.GetComponent<EnemySnake>().EliminateEnemy();
         }
 
-        if (collision.gameObject.CompareTag("EnemyDucky") && atacando)
+        if (collision.gameObject.CompareTag("EnemyDucky") && atacking)
         {
             collision.gameObject.GetComponent<EnemyDucky>().EliminateEnemy();
         }
+
+        atacking = false;
     }
 
     private void GetHited(Collision2D collision)

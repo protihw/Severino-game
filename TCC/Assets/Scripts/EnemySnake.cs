@@ -44,6 +44,7 @@ public class EnemySnake : MonoBehaviour
                 if (timer > 200)
                 {
                     Sound.Instace.InimigoCobrar();
+
                     timer = 0;
                 }
             }
@@ -84,7 +85,6 @@ public class EnemySnake : MonoBehaviour
         animator.SetBool("isDie", true);
         isDying = true;
         GetComponent<BoxCollider2D>().enabled = false;
-        //Sound.Instace.InimigoCobrar();
         Destroy(gameObject, 0.3f);
     }   
 }

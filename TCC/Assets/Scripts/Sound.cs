@@ -49,10 +49,6 @@ public class Sound : MonoBehaviour
         {
             DestroyNonInstanceTransitioners();
         }
-        //if (!musicSource.isPlaying)
-        //{
-        //   // musicSource.Play();
-        //}
     }
     private bool DestroyNonInstanceTransitioners()
     {
@@ -83,9 +79,6 @@ public class Sound : MonoBehaviour
         PlayerSource.PlayOneShot(chicote);
     }
 
-
-
-
     //Inimigos
     public void InimigoCobrar()
     {
@@ -98,7 +91,6 @@ public class Sound : MonoBehaviour
     }
 
     //Scenario
-
     public void ScenarioBox()
     {
         scenarioSource.PlayOneShot(box);
@@ -110,7 +102,6 @@ public class Sound : MonoBehaviour
     }
 
     //Musicas
-
     public void MudarMusicaMenu()
     {
         musicSource.Stop();
@@ -124,13 +115,13 @@ public class Sound : MonoBehaviour
         musicSource.clip = musicaDeserto;
         musicSource.Play();
     }
+
     public void MudarMusicaMap()
     {
         musicSource.Stop();
         musicSource.clip = musicaMap;
         musicSource.Play();
     }
-
 
     public void MudarMusicaMar()
     {
@@ -153,7 +144,6 @@ public class Sound : MonoBehaviour
         musicSource.Play();
     }
 
-
     //music city 
     public void MudarMusicaCity()
     {
@@ -163,7 +153,6 @@ public class Sound : MonoBehaviour
         musicity.Play();
 
     }
-
 
 
     public void MuteUnmuteGame()

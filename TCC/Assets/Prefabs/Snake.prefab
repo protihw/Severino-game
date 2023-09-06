@@ -12,8 +12,8 @@ GameObject:
   - component: {fileID: 3382816945939113868}
   - component: {fileID: 1748269521719393451}
   - component: {fileID: 2590523162871828326}
-  - component: {fileID: 8392671892272567221}
   - component: {fileID: 2348426495484979136}
+  - component: {fileID: 8392671892272567221}
   m_Layer: 7
   m_Name: Snake
   m_TagString: EnemySnake
@@ -137,23 +137,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &8392671892272567221
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 179794396698047865}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4eb0bf2fb85b95c43ada94940a70a28e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  moveSpeed: 2
-  groundCheck: {fileID: 3182620570601005505}
-  groundLayer:
-    serializedVersion: 2
-    m_Bits: 64
 --- !u!61 &2348426495484979136
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -199,6 +182,25 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.16720453, y: 0.14307892}
   m_EdgeRadius: 0
+--- !u!114 &8392671892272567221
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 179794396698047865}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4eb0bf2fb85b95c43ada94940a70a28e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveSpeed: 2
+  groundCheck: {fileID: 3182620570601005505}
+  groundLayer:
+    serializedVersion: 2
+    m_Bits: 64
+  room: {fileID: 0}
+  timer: 0
 --- !u!1 &3494633949426572787
 GameObject:
   m_ObjectHideFlags: 0

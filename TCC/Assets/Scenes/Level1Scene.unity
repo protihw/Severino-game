@@ -786,9 +786,9 @@ GameObject:
   - component: {fileID: 136817216}
   - component: {fileID: 136817215}
   - component: {fileID: 136817214}
+  - component: {fileID: 136817211}
   - component: {fileID: 136817213}
   - component: {fileID: 136817212}
-  - component: {fileID: 136817211}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -878,6 +878,7 @@ MonoBehaviour:
     m_Bits: 64
   timerEffect: 0
   atacando: 0
+  room: {fileID: 1875715560}
 --- !u!61 &136817214
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1032,7 +1033,7 @@ Transform:
   m_GameObject: {fileID: 136817210}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 82.09, y: -5.77, z: 0}
+  m_LocalPosition: {x: -33.5, y: -7.023, z: 0}
   m_LocalScale: {x: 5, y: 5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -3094,7 +3095,7 @@ Transform:
   m_GameObject: {fileID: 425061205}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 82.09, y: -0.26999998, z: -10}
+  m_LocalPosition: {x: -33.5, y: -1.5229998, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -3825,7 +3826,7 @@ Transform:
   m_GameObject: {fileID: 599455040}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 82.08997, y: -1.40324, z: -10}
+  m_LocalPosition: {x: -20.470694, y: -1.52299, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -14727,6 +14728,7 @@ SceneRoots:
   - {fileID: 599455043}
   - {fileID: 425061207}
   - {fileID: 97251594}
+  - {fileID: 136817218}
   - {fileID: 662346434}
   - {fileID: 397515274}
   - {fileID: 560156341}
@@ -14742,4 +14744,3 @@ SceneRoots:
   - {fileID: 281111858}
   - {fileID: 1875715561}
   - {fileID: 184401274}
-  - {fileID: 136817218}
