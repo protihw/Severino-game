@@ -189,19 +189,20 @@ public class PlayerController : MonoBehaviour
 
             collision.gameObject.GetComponent<BoxCollider2D>().enabled = false;
             Destroy(collision.gameObject, 0.5f);
+            atacking = false;
         }
 
         if (collision.gameObject.CompareTag("EnemySnake") && atacking)
         {
             collision.gameObject.GetComponent<EnemySnake>().EliminateEnemy();
+            atacking = false;
         }
 
         if (collision.gameObject.CompareTag("EnemyDucky") && atacking)
         {
             collision.gameObject.GetComponent<EnemyDucky>().EliminateEnemy();
+            atacking = false;
         }
-
-        atacking = false;
     }
 
     private void GetHited(Collision2D collision)
