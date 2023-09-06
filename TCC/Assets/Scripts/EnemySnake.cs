@@ -28,7 +28,6 @@ public class EnemySnake : MonoBehaviour
         if (!isDying && isGrounded)
         {
             float distanceToPlayer = Vector2.Distance(transform.position, player.position);
-           
 
             if (distanceToPlayer <= 5)
             {
