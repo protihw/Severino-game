@@ -6,8 +6,15 @@ using UnityEngine.SceneManagement;
 
 public class GameOverManager : MonoBehaviour
 {
-    public void ChangeLevelMapScene()
+
+    private void Awake()
     {
+        Sound.Instace.MudarMusicaGameOver();
+    }
+    public void ChangeLevelMapScene()
+    
+    {
+        //Sound.Instace.MudarMusicaGameOver();
         SceneManager.LoadScene(1);
     }
 
