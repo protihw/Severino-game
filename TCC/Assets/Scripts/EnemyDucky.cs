@@ -44,7 +44,7 @@ public class EnemyDucky : MonoBehaviour
 
                 if (timer > 200)
                 {
-                    Debug.Log("DUFVSGHDIUF SOm");
+                    Debug.Log("Som hahah");
                     Sound.Instace.Inimigoducky();
                     timer = 0;
                 }

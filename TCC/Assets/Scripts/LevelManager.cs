@@ -24,7 +24,7 @@ public class LevelManager : MonoBehaviour
                 Sound.Instace.MudarMusicaMar();
                 break;
             case 4:
-                Sound.Instace.MudarMusicaCidade();
+                Sound.Instace.MudarMusicaCity();
                 break;
 
             case 5:

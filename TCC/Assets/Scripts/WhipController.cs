@@ -30,5 +30,6 @@ public class WhipController : MonoBehaviour
         // Ativa o whipCollider no início da animação
         whipCollider.enabled = true;
         PlayerController.player.atacando = true;
+        Sound.Instace.PLayerchicoteEffect();
     }
 }

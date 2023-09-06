@@ -2983,6 +2983,7 @@ GameObject:
   - component: {fileID: 1946291119}
   - component: {fileID: 1946291118}
   - component: {fileID: 1946291120}
+  - component: {fileID: 1946291121}
   m_Layer: 0
   m_Name: AudioSource
   m_TagString: Untagged
@@ -3002,7 +3003,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 0.143
+  m_Volume: 0.087
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -3102,8 +3103,9 @@ MonoBehaviour:
   musicaMenu: {fileID: 8300000, guid: b291b9fb9601fb441a1ce4e3983c340c, type: 3}
   musicaDeserto: {fileID: 8300000, guid: d971ae6e384854a48a9cfe6c8b665348, type: 3}
   musicaMar: {fileID: 8300000, guid: bb6768600fa504341bbe0f8aaaf5661b, type: 3}
-  musicaCidade: {fileID: 8300000, guid: bf5e16cca5e6c4743abbbc76b6413a7f, type: 3}
   musicaGameOver: {fileID: 8300000, guid: b40b92db767cecf4faa9691b0740545b, type: 3}
+  musicity: {fileID: 1946291121}
+  musicacidade: {fileID: 8300000, guid: bf5e16cca5e6c4743abbbc76b6413a7f, type: 3}
   inimigoSource: {fileID: 1946291119}
   cobra: {fileID: 8300000, guid: 6a71485e56a95f14d961cdd09dcfe582, type: 3}
   ducky: {fileID: 8300000, guid: cb2aad4fed8b51d4bb9f8e134823381b, type: 3}
@@ -3111,6 +3113,7 @@ MonoBehaviour:
   correr: {fileID: 8300000, guid: ecdbd41945f624a4ead8f9dfb86778e5, type: 3}
   pular: {fileID: 8300000, guid: 00168394f0f5a7443a189286ac85b05d, type: 3}
   dano: {fileID: 8300000, guid: 3a3ec91dd1c55ce4d819f0a4ac9fbaea, type: 3}
+  chicote: {fileID: 8300000, guid: 89aa42ac08064e14ebf1ed7c516e256e, type: 3}
   dontDestroyOnLoad: 1
   scenarioSource: {fileID: 1946291120}
   box: {fileID: 8300000, guid: d8c3db8467f67234f830cbb43308d581, type: 3}
@@ -3238,7 +3241,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 0.172
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -3323,6 +3326,102 @@ AudioSource:
     m_PostInfinity: 2
     m_RotationOrder: 4
 --- !u!82 &1946291120
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1946291114}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!82 &1946291121
 AudioSource:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

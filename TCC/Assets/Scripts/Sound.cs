@@ -8,7 +8,12 @@ public class Sound : MonoBehaviour
 
     [Header("Musica")]
     public AudioSource musicSource;
-    public AudioClip musicaMenu, musicaDeserto,musicaMar,musicaCidade,musicaGameOver;
+    public AudioClip musicaMenu, musicaDeserto,musicaMar,musicaGameOver;
+
+    [Header("cidade")]
+    public AudioSource musicity;
+    public AudioClip musicacidade;
+
 
     [Header("Inimigo")]
     public AudioSource inimigoSource;
@@ -17,7 +22,7 @@ public class Sound : MonoBehaviour
 
     [Header("Player")]
     public AudioSource PlayerSource;
-    public AudioClip correr, pular, dano;
+    public AudioClip correr, pular, dano, chicote;
     public bool dontDestroyOnLoad = true;
 
     [Header("Scenario")]
@@ -73,6 +78,11 @@ public class Sound : MonoBehaviour
         PlayerSource.PlayOneShot(dano);
     }
 
+    public void PLayerchicoteEffect()
+    {
+        PlayerSource.PlayOneShot(chicote);
+    }
+
 
 
 
@@ -125,7 +135,7 @@ public class Sound : MonoBehaviour
     public void MudarMusicaCidade()
     {
         musicSource.Stop();
-        musicSource.clip = musicaCidade;
+        musicSource.clip = musicacidade;
         musicSource.Play();
     }
 
@@ -136,7 +146,14 @@ public class Sound : MonoBehaviour
         musicSource.Play();
     }
 
+    public void MudarMusicaCity()
+    {
+        
+        musicity.Stop();
+        musicity.clip = musicacidade;
+        musicity.Play();
 
+    }
 
 
 
