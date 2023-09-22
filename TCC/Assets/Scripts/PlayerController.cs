@@ -71,7 +71,7 @@ public class PlayerController : MonoBehaviour
         }
 
         animator.SetBool("isPressed", Mathf.Abs(horizontalInput) > 0);
-
+        //pulo
         if (isGrounded && Input.GetKeyDown(KeyCode.Space))
         {
             rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
@@ -104,7 +104,7 @@ public class PlayerController : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D collision)
     {
-        // colisão com a cobra
+        // colisï¿½o com a cobra
         if (collision.gameObject.CompareTag("EnemySnake"))
         {
             float playerY = transform.position.y;
@@ -120,7 +120,7 @@ public class PlayerController : MonoBehaviour
             }
         }
 
-        // colisão com o pato
+        // colisï¿½o com o pato
         if (collision.gameObject.CompareTag("EnemyDucky"))
         {
             float playerY = transform.position.y;
@@ -136,19 +136,19 @@ public class PlayerController : MonoBehaviour
             }
         }
 
-        // colisão com obstaculos
+        // colisï¿½o com obstaculos
         if (collision.gameObject.CompareTag("Obstacle"))
         {
             GetHited(collision);
         }
 
-        // colisão com espinhos
+        // colisï¿½o com espinhos
         if (collision.gameObject.CompareTag("Thorns"))
         {
             LevelManager.levelManager.GameOver();
         }
 
-        // colisão com as moedas
+        // colisï¿½o com as moedas
         if (collision.gameObject.CompareTag("Coin"))
         {
 
@@ -163,7 +163,7 @@ public class PlayerController : MonoBehaviour
             ScoreManager.scoreManager.UpdateScore(score);
         }
 
-        // colisão com checkpoint
+        // colisï¿½o com checkpoint
         if (collision.gameObject.CompareTag("Checkpoint"))
         {
             if (PlayerPrefs.GetInt("Levels") > 2)
