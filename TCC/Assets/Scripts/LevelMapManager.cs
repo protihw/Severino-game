@@ -14,6 +14,10 @@ public class LevelMapManager : MonoBehaviour
     {
         levelMapManager = this;
         Sound.Instace.MudarMusicaMap();
+        if (!PlayerPrefs.HasKey("Levels"))
+        {
+            PlayerPrefs.SetInt("Levels", 0);
+        }
     }
 
     void Start()
@@ -31,24 +35,21 @@ public class LevelMapManager : MonoBehaviour
     {
         if (currentWaypoint == 1)
         {
-            if (PlayerPrefs.GetInt("Levels") <= 2)
-            {
-                SceneManager.LoadScene(2);
-            }
+
+            SceneManager.LoadScene(2);
+
         }
-        else if (currentWaypoint == 6)
+        if (currentWaypoint == 6)
         {
-            if (PlayerPrefs.GetInt("Levels") <= 3)
-            { 
-                SceneManager.LoadScene(3);
-            }
+
+            SceneManager.LoadScene(3);
+
         }
-        else if (currentWaypoint == 11)
+        if (currentWaypoint == 11)
         {
-            if (PlayerPrefs.GetInt("Levels") <= 4)
-            { 
-                SceneManager.LoadScene(4);
-            }
+
+            SceneManager.LoadScene(4);
+
         }
     }
 

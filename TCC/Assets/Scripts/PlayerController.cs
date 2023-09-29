@@ -44,7 +44,9 @@ public class PlayerController : MonoBehaviour
     }
 
     void Update()
+
     {
+
         isGrounded = Physics2D.OverlapCircle(groundCheck.position, 0.1f, groundLayer);
 
         float horizontalInput = Input.GetAxis("Horizontal");
